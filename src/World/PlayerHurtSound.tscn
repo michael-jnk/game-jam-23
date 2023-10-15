@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg3kgelggcj0m"]
+
+[ext_resource type="AudioStream" uid="uid://dgxmw2unax32c" path="res://Music and Sounds/Hurt.wav" id="1_g0dmp"]
+[ext_resource type="Script" path="res://PlayerHurtSound.gd" id="1_y0gyh"]
+
+[node name="PlayerHurtSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_g0dmp")
+autoplay = true
+script = ExtResource("1_y0gyh")
