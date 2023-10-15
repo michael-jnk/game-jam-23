@@ -37,6 +37,8 @@ var animationState = null
 @onready var PlayerHurtSound = preload("res://World/PlayerHurtSound.tscn")
 
 signal health_changed
+signal player_hit
+
 
 func _ready():
 	animationPlayer = $AnimationPlayer
@@ -106,12 +108,9 @@ func roll_animation_finished():
 
 func _on_hurtbox_area_entered(area):
 	hurtbox.create_hit_effect()
-	hurtbox.start_invincibility(0.5)
-	health -= area.damage
 	var playerHurtSound = PlayerHurtSound.instantiate()
 	get_parent().add_child(playerHurtSound)
-	print("hello!")
-	emit_signal("health_changed", health)
-	if health <= 0:
-		queue_free()
+	emit_signal("player_hit")
 	
+func start_invincibility(duration):
+	hurtbox.start_invincibility(duration)

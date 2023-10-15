@@ -1,12 +1,18 @@
 extends Area2D
 
 var HitEffect = preload("res://Effects/hit_effect.tscn")
-@onready var timer = $Timer
 
+@onready var timer = $Timer
+@onready var collisionShape = $CollisionShape2D
 var invincible = false
 
 signal invincibility_started
 signal invincibility_ended
+
+
+func _ready():
+	self.invincibility_started.connect(_on_invincibility_started)
+	self.invincibility_ended.connect(_on_invincibility_ended)
 
 func set_invincible(value):
 	invincible = value
@@ -16,7 +22,7 @@ func set_invincible(value):
 		emit_signal("invincibility_ended")
 	
 func start_invincibility(duration):
-	self.invincible = true
+	self.set_invincible(true)
 	timer.start(duration)
 	
 func create_hit_effect():
@@ -33,9 +39,15 @@ func _on_timer_timeout():
 
 
 func _on_invincibility_ended():
+	print("invincibility ended!")
 	set_deferred("monitorable", true)
+	set_deferred("monitoring", true)
+	collisionShape.disabled = false
 
 func _on_invincibility_started():
+	print("invincibility started!")
 	set_deferred("monitorable", false)
+	set_deferred("monitoring", false)
+	collisionShape.disabled = true
 
 

@@ -32,14 +32,13 @@ func _physics_process(delta):
 			if wanderController.get_time_left() <= .1:
 				
 				state = pick_random_state([IDLE, WANDER])
-				print(state)
+				
 				wanderController.set_wander_timer(randf_range(1, 3))
 			if detectionZone.player_is_detected():
 				state = CHASE
 		WANDER: 
 			if wanderController.get_time_left() <= .1:
 				state = pick_random_state([IDLE, WANDER])
-				print(state)
 				wanderController.set_wander_timer(randf_range(1, 3))
 			accellerate_towards(wanderController.target_position, delta)
 			

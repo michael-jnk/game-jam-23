@@ -4,17 +4,16 @@ var hearts = 4
 var max_hearts = 4
 
 signal no_health
-signal health_changed(value)
 
-@onready var player = $"../../YSortNode/Player"
+@onready var playerController = $"../../PlayerController"
 @onready var heartUIFull = $HeartUIFull
 @onready var heartUIEmpty = $HeartUIEmpty
 
 func _ready():
-	print(player.max_health)
-	self.set_max_hearts(player.max_health) 
-	self.set_hearts(player.health)
-	player.health_changed.connect(set_hearts)
+	print(playerController.max_health)
+	self.set_max_hearts(playerController.max_health) 
+	self.set_hearts(playerController.health)
+	playerController.health_changed.connect(set_hearts)
 
 
 
@@ -27,9 +26,7 @@ func set_max_hearts(value):
 
 func set_hearts(value):
 	hearts = clamp(0, value, max_hearts)	
-	emit_signal("health_changed")
 	if heartUIFull != null:
-		
 		heartUIFull.size.x = hearts * 15
 	
 
