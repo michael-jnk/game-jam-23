@@ -8,7 +8,6 @@ func player_is_detected():
 
 
 func _on_area_entered(area):
-	print("detected!")
 	player = area
 
 

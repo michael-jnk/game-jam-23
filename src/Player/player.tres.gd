@@ -81,13 +81,12 @@ func move_state(delta):
 	else:
 		velocity =  velocity.move_toward(Vector2.ZERO, FRICTION)
 		animationState.travel("Idle")
-	if move_and_slide():
-		print("collided!")
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
+	move_and_slide()
 
 func attack_state():
 	animationState.travel("Attack")

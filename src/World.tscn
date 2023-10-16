@@ -941,9 +941,9 @@ script = ExtResource("1_gq7kl")
 
 [node name="Background" type="Sprite2D" parent="World 1"]
 texture_repeat = 2
-position = Vector2(1, -1)
+position = Vector2(63, 49)
 rotation = -0.000780472
-scale = Vector2(0.72851, 0.534301)
+scale = Vector2(1.616, 1.037)
 texture = ExtResource("1_uvycp")
 centered = false
 offset = Vector2(-200, -100)
@@ -977,8 +977,10 @@ y_sort_enabled = true
 [node name="Camera2D" type="Camera2D" parent="World 1/YSortNode"]
 position = Vector2(135, 65)
 enabled = false
-limit_left = -144
+limit_left = -256
 limit_top = -48
+limit_right = 1680
+limit_bottom = 1184
 position_smoothing_enabled = true
 
 [node name="Player" parent="World 1/YSortNode" instance=ExtResource("1_nc3is")]
@@ -1040,9 +1042,9 @@ position = Vector2(-1000, 2.08165e-12)
 
 [node name="Background" type="Sprite2D" parent="World 2"]
 texture_repeat = 2
-position = Vector2(2, -4.76837e-07)
+position = Vector2(-675.481, 50.7605)
 rotation = -0.000780472
-scale = Vector2(0.72851, 0.534301)
+scale = Vector2(1.3843, 1.03662)
 texture = ExtResource("1_uvycp")
 centered = false
 offset = Vector2(-200, -100)
@@ -1075,8 +1077,10 @@ y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="World 2/YSortNode"]
 position = Vector2(135, 65)
-limit_left = -1136
+limit_left = -1952
 limit_top = -48
+limit_right = -304
+limit_bottom = 1184
 position_smoothing_enabled = true
 
 [node name="Player" parent="World 2/YSortNode" instance=ExtResource("1_nc3is")]
@@ -1141,7 +1145,3 @@ script = ExtResource("11_ae5qn")
 
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="player_hit" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
-
-[editable path="World 1/YSortNode/Player"]
-[editable path="World 1/YSortNode/Player/Hurtbox"]
-[editable path="World 1/YSortNode/Player/HitboxPivot/SwordHitbox"]
