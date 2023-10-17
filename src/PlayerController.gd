@@ -14,6 +14,8 @@ var health = 5
 signal health_changed
 
 func _on_player_player_hit():
+	player1.create_hit_effect()
+	player2.create_hit_effect()
 	health -= 1
 	emit_signal("health_changed", health)
 	player1.start_invincibility(invincibilityDuration)

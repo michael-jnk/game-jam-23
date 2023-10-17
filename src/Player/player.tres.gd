@@ -133,10 +133,12 @@ func dash_state(delta):
 		state = MOVE
 
 func _on_hurtbox_area_entered(area):
-	hurtbox.create_hit_effect()
 	var playerHurtSound = PlayerHurtSound.instantiate()
 	get_parent().add_child(playerHurtSound)
 	emit_signal("player_hit")
 	
 func start_invincibility(duration):
 	hurtbox.start_invincibility(duration)
+
+func create_hit_effect():
+	hurtbox.create_hit_effect()
