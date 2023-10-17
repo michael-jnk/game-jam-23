@@ -34,9 +34,9 @@ func _process(delta):
 
 
 func _on_fader_animation_finished(anim_name):
-	print(anim_name)
+#	print(anim_name)
 	if anim_name == "fade_to_black":
-		print("hello!")
+#		print("hello!")
 		if currentWorld == WORLD1:
 			camera2.position_smoothing_enabled = false
 			camera1.enabled = false

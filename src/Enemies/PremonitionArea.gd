@@ -10,7 +10,7 @@ var target = null
 func create_premonition(targ):
 	target = targ
 	premonition = premonitionScene.instantiate()
-	print("World "+str((targ.world%2)+1)+"/YSortNode/Player")
+#	print("World "+str((targ.world%2)+1)+"/YSortNode/Player")
 	world.get_node("World "+str((targ.world%2)+1)+"/YSortNode/Player").add_child(premonition)
 	premonition.position = global_position - target.global_position
 	premonitionActive = true

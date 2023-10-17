@@ -39,13 +39,13 @@ func _on_timer_timeout():
 
 
 func _on_invincibility_ended():
-	print("invincibility ended!")
+#	print("invincibility ended!")
 	set_deferred("monitorable", true)
 	set_deferred("monitoring", true)
 	collisionShape.disabled = false
 
 func _on_invincibility_started():
-	print("invincibility started!")
+#	print("invincibility started!")
 	set_deferred("monitorable", false)
 	set_deferred("monitoring", false)
 	collisionShape.disabled = true

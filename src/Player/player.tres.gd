@@ -109,7 +109,7 @@ func move_state(delta):
 			state = ATTACK
 		else:
 			state = ATTACKINACTIVE
-			print("attackinactive")
+#			print("attackinactive")
 	move_and_slide()
 
 func attack_state():

@@ -1,0 +1,192 @@
+[gd_scene load_steps=27 format=3 uid="uid://ve7u2xd0x784"]
+
+[ext_resource type="Script" path="res://Enemies/dash-alien.gd" id="1_2xefc"]
+[ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="2_le0nj"]
+[ext_resource type="Texture2D" uid="uid://b1qik3m3jics" path="res://Enemies/Bat.png" id="3_4yjyv"]
+[ext_resource type="Texture2D" uid="uid://2vl6a4xaitw2" path="res://Shadows/SmallShadow.png" id="4_wupwu"]
+[ext_resource type="PackedScene" uid="uid://cmif8gb6exa4c" path="res://Hitboxes and Hurtboxes/Hitbox.tscn" id="5_c2bqr"]
+[ext_resource type="PackedScene" uid="uid://rgmmijyfgg3l" path="res://Enemies/player_detection_zone.tscn" id="6_xenm7"]
+[ext_resource type="Script" path="res://Enemies/player_detection_zone.gd" id="7_8ojl1"]
+[ext_resource type="Script" path="res://Enemies/SoftCollision.gd" id="8_h5t6v"]
+[ext_resource type="Script" path="res://Enemies/WanderController.gd" id="9_dv426"]
+[ext_resource type="Script" path="res://Enemies/ChargeRadius.gd" id="10_gm1xu"]
+[ext_resource type="Script" path="res://Enemies/PremonitionArea.gd" id="10_j3gca"]
+[ext_resource type="Script" path="res://Enemies/ChargeController.gd" id="11_xsg81"]
+[ext_resource type="PackedScene" uid="uid://lb3s78b3qjol" path="res://Effects/charge_particles.tscn" id="13_30f4e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdbqx"]
+radius = 8.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvi8h"]
+atlas = ExtResource("3_4yjyv")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs2oo"]
+atlas = ExtResource("3_4yjyv")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaqq0"]
+atlas = ExtResource("3_4yjyv")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmx7l"]
+atlas = ExtResource("3_4yjyv")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n7ki"]
+atlas = ExtResource("3_4yjyv")
+region = Rect2(64, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14jcw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvi8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs2oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaqq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmx7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n7ki")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfwk4"]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkr4p"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_raqk6"]
+radius = 142.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5ry1"]
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1h2x"]
+radius = 69.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fs5lv"]
+radius = 16.0312
+
+[node name="DashAlien" type="CharacterBody2D"]
+collision_layer = 16
+script = ExtResource("1_2xefc")
+
+[node name="Hurtbox" parent="." instance=ExtResource("2_le0nj")]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CapsuleShape2D_fdbqx")
+
+[node name="animatedBat" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.407843, 0, 1)
+sprite_frames = SubResource("SpriteFrames_14jcw")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(1, 7)
+texture = ExtResource("4_wupwu")
+
+[node name="ObjectCollisions" type="CollisionShape2D" parent="."]
+position = Vector2(1, 7)
+shape = SubResource("CircleShape2D_vfwk4")
+
+[node name="Hitbox" parent="." instance=ExtResource("5_c2bqr")]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_tkr4p")
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource("6_xenm7")]
+collision_layer = 32
+collision_mask = 6
+script = ExtResource("7_8ojl1")
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+shape = SubResource("CircleShape2D_raqk6")
+
+[node name="SoftCollision" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("8_h5t6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoftCollision"]
+position = Vector2(1, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_g5ry1")
+
+[node name="WanderController" type="Node2D" parent="."]
+script = ExtResource("9_dv426")
+wander_range = 30
+
+[node name="Timer" type="Timer" parent="WanderController"]
+
+[node name="ChargeZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("10_gm1xu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeZone"]
+shape = SubResource("CircleShape2D_s1h2x")
+
+[node name="ChargeController" type="Node2D" parent="."]
+script = ExtResource("11_xsg81")
+
+[node name="PrepTimer" type="Timer" parent="ChargeController"]
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="ChargeController"]
+one_shot = true
+
+[node name="DashTimer" type="Timer" parent="ChargeController"]
+one_shot = true
+
+[node name="PremonitionArea" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("10_j3gca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PremonitionArea"]
+shape = SubResource("CircleShape2D_fs5lv")
+
+[node name="ChargeParticles" parent="." instance=ExtResource("13_30f4e")]
+position = Vector2(0, 7)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_area_entered"]
+[connection signal="area_exited" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_area_exited"]
+[connection signal="timeout" from="WanderController/Timer" to="WanderController" method="_on_timer_timeout"]
+[connection signal="area_entered" from="ChargeZone" to="ChargeZone" method="_on_area_entered"]
+[connection signal="area_exited" from="ChargeZone" to="ChargeZone" method="_on_area_exited"]
+[connection signal="charge_done" from="ChargeController" to="." method="_on_charge_controller_charge_done"]
+[connection signal="charge_prep_done" from="ChargeController" to="." method="_on_charge_controller_charge_prep_done"]
+[connection signal="cooldown_done" from="ChargeController" to="." method="_on_charge_controller_cooldown_done"]
+[connection signal="timeout" from="ChargeController/PrepTimer" to="ChargeController" method="_on_timer_timeout"]
+[connection signal="timeout" from="ChargeController/CooldownTimer" to="ChargeController" method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="ChargeController/DashTimer" to="ChargeController" method="_on_dash_timer_timeout"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
+[editable path="PlayerDetectionZone"]

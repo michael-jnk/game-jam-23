@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=27 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://btrdufnv36yo" path="res://Enemies/bat.tscn" id="4_tkaki"]
 [ext_resource type="PackedScene" uid="uid://ksdcynvacir3" path="res://World/grass.tscn" id="6_ayrvu"]
 [ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="8_x3qk6"]
+[ext_resource type="PackedScene" uid="uid://ve7u2xd0x784" path="res://Enemies/dash-alien.tscn" id="10_sw5wt"]
 [ext_resource type="Script" path="res://PlayerController.gd" id="11_ae5qn"]
 [ext_resource type="Script" path="res://UI/Fader.gd" id="11_svbhb"]
 [ext_resource type="PackedScene" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
@@ -1088,16 +1089,19 @@ position = Vector2(281, 43)
 y_sort_enabled = true
 
 [node name="Bat" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
-position = Vector2(17, 182)
+position = Vector2(-42, 163)
 
 [node name="Bat2" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
-position = Vector2(284, 166)
+position = Vector2(338, 162)
 
 [node name="Bat4" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(-92, 37)
 
 [node name="Bat3" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(375, 44)
+
+[node name="DashAliens" type="Node2D" parent="World 1"]
+y_sort_enabled = true
 
 [node name="World 2" type="Node2D" parent="."]
 position = Vector2(-1000, 2.08165e-12)
@@ -1185,17 +1189,17 @@ position = Vector2(281, 43)
 
 [node name="Bats" type="Node2D" parent="World 2/YSortNode"]
 
-[node name="Bat" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
-position = Vector2(-20, 152)
-
-[node name="Bat2" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
-position = Vector2(284, 166)
-
 [node name="Bat4" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(-92, 37)
 
 [node name="Bat3" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(375, 44)
+
+[node name="DashAliens" type="Node2D" parent="World 2"]
+y_sort_enabled = true
+
+[node name="DashAlien" parent="World 2/DashAliens" instance=ExtResource("10_sw5wt")]
+position = Vector2(54, 187)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
