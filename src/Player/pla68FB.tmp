@@ -1280,7 +1280,6 @@ graph_offset = Vector2(-124.6, -21.6257)
 height = 33.9989
 
 [node name="Player" type="CharacterBody2D"]
-y_sort_enabled = true
 position = Vector2(0, -8)
 collision_layer = 2
 collision_mask = 33

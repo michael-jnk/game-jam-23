@@ -8,12 +8,12 @@ var temp_velocity = Vector2.ZERO
 const MAX_SPEED = 80
 const ACCELLERATION = 200
 const FRICTION = 70
-const ROLL_SPEED = MAX_SPEED * 1.5
+const DASH_SPEED = MAX_SPEED * 2
 
 @onready var hurtbox = $Hurtbox
 
 var state = MOVE
-var roll_vector = Vector2.ZERO
+var dash_vector = Vector2.ZERO
 
 @export var max_health = 4
 @export var health = 4
@@ -25,7 +25,7 @@ var HitEffect = preload("res://Effects/hit_effect.tscn")
 
 enum {
 	MOVE,
-	ROLL, 
+	DASH, 
 	ATTACK
 }
 
@@ -39,13 +39,20 @@ var animationState = null
 signal health_changed
 signal player_hit
 
+@onready var sprite = $Sprite2D
+const DASHLENGTH = 0.2 #in seconds
+const DASH_COOLDOWN = 0.7 #in seconds
+var dashLengthLeft = DASHLENGTH
+var dashCooldown = 0
+var evenFrame = false
+
 
 func _ready():
 	animationPlayer = $AnimationPlayer
 	animationTree = $AnimationTree
 	animationState = animationTree.get("parameters/playback")
 	animationTree.active = true
-	swordHitbox.knockback_vector = roll_vector
+	swordHitbox.knockback_vector = dash_vector
 	get_node("HitboxPivot/SwordHitbox/CollisionShape2D").disabled = true
 
 func _physics_process(delta):
@@ -54,8 +61,8 @@ func _physics_process(delta):
 			move_state(delta)
 		ATTACK:
 			attack_state()
-		ROLL:
-			roll_state()
+		DASH:
+			dash_state(delta)
 
 		
 
@@ -64,8 +71,8 @@ func move_state(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
-	roll_vector = input_vector
-	swordHitbox.knockback_vector = roll_vector
+	dash_vector = input_vector
+	swordHitbox.knockback_vector = dash_vector
 	#input_vector = input_vector.normalized()
 	
 	
@@ -78,14 +85,20 @@ func move_state(delta):
 		#velocity += input_vector * ACCELLERATION * delta
 		animationState.travel("Run")
 		velocity = velocity.clamp(-Vector2.ONE * MAX_SPEED, Vector2.ONE * MAX_SPEED)
+		
+		if dashCooldown > 0:
+			dashCooldown -= delta
+		elif Input.is_action_just_pressed("dash"):
+			state = DASH
+			dashLengthLeft = DASHLENGTH
+			evenFrame = false
+			dashCooldown = DASH_COOLDOWN
 	else:
 		velocity =  velocity.move_toward(Vector2.ZERO, FRICTION)
 		animationState.travel("Idle")
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
-	if Input.is_action_just_pressed("roll"):
-		state = ROLL
 	move_and_slide()
 
 func attack_state():
@@ -95,15 +108,27 @@ func attack_state():
 func attack_animation_finished():
 	state = MOVE
 	
-func roll_state():
-	animationState.travel("Roll")
-	velocity = roll_vector * ROLL_SPEED
+#func roll_state():
+#	animationState.travel("Roll")
+#	velocity = roll_vector * ROLL_SPEED
+#
+#	move_and_slide()
+
+func dash_state(delta):
+	dashLengthLeft -= delta
+#	if (dashLengthLeft/DASHFRAMES) >= (dashLengthLeft/DASHLENGTH):
+	if evenFrame:
+		var effect = load("res://Effects/dash_effect.tscn").instantiate()
+		effect.frame = sprite.frame
+		get_tree().current_scene.add_child(effect)
+		effect.global_position = global_position
+	evenFrame = !evenFrame
 	
+	velocity = dash_vector * DASH_SPEED
 	move_and_slide()
 	
-func roll_animation_finished():
-	state = MOVE
-
+	if dashLengthLeft <= 0:
+		state = MOVE
 
 func _on_hurtbox_area_entered(area):
 	hurtbox.create_hit_effect()
