@@ -10,10 +10,29 @@ var health = 5
 @onready var player1 = $"../World 1/YSortNode/Player"
 @onready var player2 = $"../World 2/YSortNode/Player"
 
+@onready var playerTranslation = player2.global_position - player1.global_position
+
+enum {
+	WORLD1,
+	WORLD2
+}
+
+@onready var currentWorld
 
 signal health_changed
 
-func _on_player_player_hit():
+func _physics_process(delta):
+	if currentWorld == WORLD1:
+		player2.global_position = player1.global_position + playerTranslation
+	else:
+		player1.global_position = player2.global_position - playerTranslation
+	
+	if player1.state != 2 && player2.state == 3:
+		player2.state = 0
+	elif player2.state != 2 && player1.state == 3:
+		player1.state = 0
+
+func _on_player_player_hit(world):
 	player1.create_hit_effect()
 	player2.create_hit_effect()
 	health -= 1

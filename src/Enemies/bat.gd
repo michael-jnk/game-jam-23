@@ -22,6 +22,7 @@ enum {
 @onready var softCollision = $SoftCollision
 const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
 
+@onready var hitbox = $Hitbox
 
 func _physics_process(delta):
 	match state:
@@ -67,7 +68,7 @@ func _physics_process(delta):
 		queue_free()
 	
 	
-		
+	hitbox.knockback_vector = velocity.normalized()
 	
 	move_and_slide()
 	
@@ -81,7 +82,7 @@ func accellerate_towards(point, delta):
 func _on_hurtbox_area_entered(area):
 	health -= 1
 	hurtbox.create_hit_effect()
-	knockback = area.knockback_vector * 120
+	knockback = area.get_knockback()
 	
 	
 func pick_random_state(states):

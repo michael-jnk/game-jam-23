@@ -5,6 +5,8 @@ extends Node2D
 @onready var fader = $CanvasLayer/Fader
 @onready var transitionEffect = $TransitionSoundEffect
 
+@onready var playerController = $PlayerController
+
 enum {
 	WORLD1,
 	WORLD2
@@ -13,13 +15,18 @@ enum {
 var currentWorld = WORLD2
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	playerController.currentWorld = currentWorld
+	playerController.player1.onWorld = currentWorld == WORLD1
+	playerController.player2.onWorld = currentWorld == WORLD2
 
 			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("change_position"):
+		playerController.currentWorld = currentWorld
+		playerController.player1.onWorld = !playerController.player1.onWorld
+		playerController.player2.onWorld = !playerController.player2.onWorld
 		fader.fade()
 		transitionEffect.play()
 			
@@ -36,10 +43,12 @@ func _on_fader_animation_finished(anim_name):
 			camera2.enabled = true
 			camera2.position_smoothing_enabled = true
 			currentWorld = WORLD2
+			playerController.currentWorld = WORLD2
 		elif currentWorld == WORLD2:
 			camera1.position_smoothing_enabled = false
 			camera2.enabled = false
 			camera1.enabled = true
 			camera2.position_smoothing_enabled = true
 			currentWorld = WORLD1
+			playerController.currentWorld = WORLD1
 		

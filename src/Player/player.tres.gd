@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var world: int
+var onWorld: bool
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
@@ -26,7 +27,8 @@ var HitEffect = preload("res://Effects/hit_effect.tscn")
 enum {
 	MOVE,
 	DASH, 
-	ATTACK
+	ATTACK,
+	ATTACKINACTIVE
 }
 
 var animationPlayer = null
@@ -39,6 +41,8 @@ var animationState = null
 signal health_changed
 signal player_hit
 signal dash_started
+
+signal attack_started
 
 @onready var sprite = $Sprite2D
 const DASHLENGTH = 0.2 #in seconds
@@ -101,7 +105,11 @@ func move_state(delta):
 		animationState.travel("Idle")
 	
 	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
+		if onWorld:
+			state = ATTACK
+		else:
+			state = ATTACKINACTIVE
+			print("attackinactive")
 	move_and_slide()
 
 func attack_state():
@@ -110,7 +118,9 @@ func attack_state():
 
 func attack_animation_finished():
 	state = MOVE
-	
+
+func other_attack_dont():
+	state = MOVE
 #func roll_state():
 #	animationState.travel("Roll")
 #	velocity = roll_vector * ROLL_SPEED
@@ -136,7 +146,8 @@ func dash_state(delta):
 func _on_hurtbox_area_entered(area):
 	var playerHurtSound = PlayerHurtSound.instantiate()
 	get_parent().add_child(playerHurtSound)
-	emit_signal("player_hit")
+	emit_signal("player_hit", world)
+	velocity = area.get_knockback() * 2
 	
 func start_invincibility(duration):
 	hurtbox.start_invincibility(duration)

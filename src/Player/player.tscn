@@ -1,11 +1,10 @@
-[gd_scene load_steps=82 format=3 uid="uid://g0ad734tja55"]
+[gd_scene load_steps=81 format=3 uid="uid://g0ad734tja55"]
 
 [ext_resource type="Script" path="res://Player/player.tres.gd" id="1_qskqa"]
 [ext_resource type="Texture2D" uid="uid://ck15jfik6gyfv" path="res://Player/mc-sprite-real.png" id="2_7ml4x"]
 [ext_resource type="PackedScene" uid="uid://cmif8gb6exa4c" path="res://Hitboxes and Hurtboxes/Hitbox.tscn" id="2_b5rst"]
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="3_tcypk"]
 [ext_resource type="AudioStream" uid="uid://cm2iwui38j7oy" path="res://Music and Sounds/Swipe.wav" id="4_5c7ky"]
-[ext_resource type="Script" path="res://Player/SwordHitbox.gd" id="4_dm4dv"]
 [ext_resource type="AudioStream" uid="uid://bcgvn3tp4a6f4" path="res://Music and Sounds/Evade.wav" id="5_3imlf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ugnbr"]
@@ -1330,7 +1329,7 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 position = Vector2(-2.08165e-12, 0)
 collision_layer = 2
 collision_mask = 8
-script = ExtResource("4_dm4dv")
+knockback_strength = 120
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
 position = Vector2(17, 0)
