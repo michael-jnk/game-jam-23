@@ -23,3 +23,4 @@ func _on_player_player_hit():
 			player1.queue_free()
 		if player2 != null:
 			player2.queue_free()
+		get_tree().change_scene_to_file("res://death_scene.tscn")

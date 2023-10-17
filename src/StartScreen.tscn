@@ -33,6 +33,7 @@ offset_bottom = 149.0
 theme_override_fonts/font = ExtResource("3_rpuf3")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("4_p72bf")
+theme_override_styles/hover = ExtResource("4_p72bf")
 text = "Start
 "
 
@@ -46,6 +47,7 @@ offset_bottom = 148.0
 theme_override_fonts/font = ExtResource("3_rpuf3")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("4_p72bf")
+theme_override_styles/hover = ExtResource("4_p72bf")
 text = "Skip Story
 "
 

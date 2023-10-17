@@ -10,6 +10,10 @@ var story = ["adsfkjhlasd flkjhasdlkfjhasldkjfha lsdkjfhalsdkjfh askdljfhalskjdf
 
 @onready var label = $TextBox/RichTextLabel
 @onready var doneMark = $"TextBox/Done Label"
+@onready var clickPlayer1 = $AudioStreamPlayer1
+@onready var clickPlayer2 = $AudioStreamPlayer2
+
+var click = false
 var current_story_rendered = ""
 var current_story_index = 0
 
@@ -18,6 +22,11 @@ func _process(delta):
 	if current_story_index < len(story[current_slide]):
 		label.append_text(story[current_slide][current_story_index])
 		current_story_index += 1
+		if click:
+			clickPlayer1.play()
+		else:
+			clickPlayer2.play()
+		click = not click
 	else:
 		doneMark.text = "⌄"
 	

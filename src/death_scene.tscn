@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8dr2et816ld5"]
+[gd_scene load_steps=5 format=3 uid="uid://c8dr2et816ld5"]
 
 [ext_resource type="Script" path="res://death_scene.gd" id="1_mydhv"]
 [ext_resource type="Texture2D" uid="uid://ijrais60efpp" path="res://death-screen.png" id="1_u2ndj"]
 [ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="3_nn2m6"]
+[ext_resource type="AudioStream" uid="uid://d4ii20unmpcya" path="res://Music and Sounds/Music.mp3" id="4_q0k77"]
 
 [node name="DeathScene" type="Control"]
 layout_mode = 3
@@ -30,5 +31,10 @@ offset_bottom = 164.0
 theme_override_colors/font_color = Color(0.160784, 0.176471, 0.203922, 1)
 theme_override_fonts/font = ExtResource("3_nn2m6")
 text = "Press enter to try again"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q0k77")
+volume_db = -0.13
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
