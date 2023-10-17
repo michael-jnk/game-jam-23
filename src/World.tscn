@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="8_x3qk6"]
 [ext_resource type="Script" path="res://PlayerController.gd" id="11_ae5qn"]
 [ext_resource type="Script" path="res://UI/Fader.gd" id="11_svbhb"]
-[ext_resource type="PackedScene" uid="uid://cugpbasgcliap" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
+[ext_resource type="PackedScene" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
 [ext_resource type="AudioStream" uid="uid://d4ii20unmpcya" path="res://Music and Sounds/Music.mp3" id="13_0g61i"]
 [ext_resource type="AudioStream" uid="uid://biswkf0bmk5tl" path="res://Music and Sounds/TransitionPlaceholder2.mp3" id="14_gdhli"]
 
@@ -1043,6 +1043,7 @@ position_smoothing_speed = 10.0
 
 [node name="Player" parent="World 1/YSortNode" instance=ExtResource("1_nc3is")]
 position = Vector2(135, 65)
+world = 1
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="World 1/YSortNode/Player"]
 remote_path = NodePath("../../Camera2D")
@@ -1144,6 +1145,7 @@ position_smoothing_speed = 10.0
 
 [node name="Player" parent="World 2/YSortNode" instance=ExtResource("1_nc3is")]
 position = Vector2(135, 65)
+world = 2
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="World 2/YSortNode/Player"]
 remote_path = NodePath("../../Camera2D")
@@ -1227,7 +1229,6 @@ autoplay = true
 [node name="TransitionSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_gdhli")
 
-[connection signal="dash_started" from="World 1/YSortNode/Player" to="CanvasLayer/DashColdown" method="_on_player_dash_started"]
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="player_hit" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://g0ad734tja55"]
+[gd_scene load_steps=82 format=3 uid="uid://g0ad734tja55"]
 
 [ext_resource type="Script" path="res://Player/player.tres.gd" id="1_qskqa"]
 [ext_resource type="Texture2D" uid="uid://ck15jfik6gyfv" path="res://Player/mc-sprite-real.png" id="2_7ml4x"]
@@ -1279,6 +1279,9 @@ graph_offset = Vector2(-124.6, -21.6257)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nw18"]
 height = 33.9989
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_aj2fy"]
+radius = 80.0062
+
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -8)
@@ -1337,7 +1340,16 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="PremonitionDetectionZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PremonitionDetectionZone"]
+shape = SubResource("CircleShape2D_aj2fy")
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="PremonitionDetectionZone" to="." method="_on_premonition_detection_zone_area_entered"]
+[connection signal="area_exited" from="PremonitionDetectionZone" to="." method="_on_premonition_detection_zone_area_exited"]
 
 [editable path="Hurtbox"]
 [editable path="HitboxPivot/SwordHitbox"]

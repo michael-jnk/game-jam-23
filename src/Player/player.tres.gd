@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var world: int
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
@@ -46,6 +46,7 @@ const DASHLENGTH = 0.2 #in seconds
 var dashLengthLeft = DASHLENGTH
 var dashCooldown = 0
 var evenFrame = false
+var effectScene = preload("res://Effects/dash_effect.tscn")
 
 
 func _ready():
@@ -120,7 +121,7 @@ func dash_state(delta):
 	dashLengthLeft -= delta
 #	if (dashLengthLeft/DASHFRAMES) >= (dashLengthLeft/DASHLENGTH):
 	if evenFrame:
-		var effect = load("res://Effects/dash_effect.tscn").instantiate()
+		var effect = effectScene.instantiate()
 		effect.frame = sprite.frame
 		get_tree().current_scene.add_child(effect)
 		effect.global_position = global_position
@@ -142,3 +143,11 @@ func start_invincibility(duration):
 
 func create_hit_effect():
 	hurtbox.create_hit_effect()
+
+
+func _on_premonition_detection_zone_area_entered(area):
+	area.create_premonition(self)
+
+
+func _on_premonition_detection_zone_area_exited(area):
+	area.remove_premonition()
