@@ -38,10 +38,11 @@ var animationState = null
 
 signal health_changed
 signal player_hit
+signal dash_started
 
 @onready var sprite = $Sprite2D
 const DASHLENGTH = 0.2 #in seconds
-const DASH_COOLDOWN = 0.7 #in seconds
+@export var DASH_COOLDOWN = 0.7 #in seconds
 var dashLengthLeft = DASHLENGTH
 var dashCooldown = 0
 var evenFrame = false
@@ -89,6 +90,7 @@ func move_state(delta):
 		if dashCooldown > 0:
 			dashCooldown -= delta
 		elif Input.is_action_just_pressed("dash"):
+			emit_signal("dash_started")
 			state = DASH
 			dashLengthLeft = DASHLENGTH
 			evenFrame = false

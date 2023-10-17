@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cugpbasgcliap"]
+
+[ext_resource type="Script" path="res://UI/dash_coldown.gd" id="1_a4y67"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1np1"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r10p"]
+bg_color = Color(0, 0.6, 0.6, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing = false
+
+[node name="DashColdown" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_a4y67")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_f1np1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6r10p")
+step = 1.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
