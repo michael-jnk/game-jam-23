@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://do0cuerbtnmtp"]
+
+[ext_resource type="Texture2D" uid="uid://orsh63dft8aq" path="res://World/GrassBackground.png" id="1_attfr"]
+[ext_resource type="Script" path="res://StartScreen.gd" id="1_luyuw"]
+[ext_resource type="FontFile" uid="uid://cun84as7qspai" path="res://Other Asets/BubbleFont.TTF" id="3_c7l5g"]
+[ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="3_rpuf3"]
+[ext_resource type="StyleBox" uid="uid://duc7hd2h8gt0n" path="res://Other Asets/button_style_box.tres" id="4_p72bf"]
+
+[node name="StartScreen" type="Control"]
+custom_minimum_size = Vector2(320, 160)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_luyuw")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_attfr")
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 53.0
+offset_top = 116.0
+offset_right = 139.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("3_rpuf3")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("4_p72bf")
+text = "Start
+"
+
+[node name="Button2" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 163.0
+offset_top = 115.0
+offset_right = 278.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("3_rpuf3")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("4_p72bf")
+text = "Skip Story
+"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_top = 38.0
+offset_right = 320.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("3_c7l5g")
+theme_override_font_sizes/font_size = 22
+text = "Placeholder
+Title"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

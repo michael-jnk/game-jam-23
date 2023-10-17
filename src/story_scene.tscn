@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnq5jve23x47a"]
+
+[ext_resource type="Script" path="res://story_scene.gd" id="1_70gc6"]
+[ext_resource type="Texture2D" uid="uid://orsh63dft8aq" path="res://World/GrassBackground.png" id="1_ekuoc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu5fg"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 0.584314)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="StoryScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70gc6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ekuoc")
+stretch_mode = 1
+
+[node name="TextBox" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="TextBox"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 107.0
+offset_right = 285.0
+offset_bottom = 177.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eu5fg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 53.0
+offset_top = 111.0
+offset_right = 274.0
+offset_bottom = 175.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="Label" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 112.0
+offset_right = 53.0
+offset_bottom = 138.0
+text = "*"
+
+[node name="Done Label" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 134.0
+offset_right = 285.0
+offset_bottom = 160.0
