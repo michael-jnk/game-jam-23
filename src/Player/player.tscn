@@ -1280,7 +1280,7 @@ graph_offset = Vector2(-124.6, -21.6257)
 height = 33.9989
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aj2fy"]
-radius = 80.0062
+radius = 124.036
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true

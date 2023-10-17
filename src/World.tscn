@@ -1084,16 +1084,19 @@ position = Vector2(27, 8)
 [node name="Tree" parent="World 1/YSortNode/Trees" instance=ExtResource("8_x3qk6")]
 position = Vector2(281, 43)
 
-[node name="Bat" parent="World 1/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bats" type="Node2D" parent="World 1/YSortNode"]
+y_sort_enabled = true
+
+[node name="Bat" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(17, 182)
 
-[node name="Bat2" parent="World 1/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bat2" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(284, 166)
 
-[node name="Bat4" parent="World 1/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bat4" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(-92, 37)
 
-[node name="Bat3" parent="World 1/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bat3" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(375, 44)
 
 [node name="World 2" type="Node2D" parent="."]
@@ -1180,16 +1183,18 @@ y_sort_enabled = true
 [node name="Tree" parent="World 2/YSortNode/Trees" instance=ExtResource("8_x3qk6")]
 position = Vector2(281, 43)
 
-[node name="Bat" parent="World 2/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bats" type="Node2D" parent="World 2/YSortNode"]
+
+[node name="Bat" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(-20, 152)
 
-[node name="Bat2" parent="World 2/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bat2" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(284, 166)
 
-[node name="Bat4" parent="World 2/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bat4" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(-92, 37)
 
-[node name="Bat3" parent="World 2/YSortNode" instance=ExtResource("4_tkaki")]
+[node name="Bat3" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(375, 44)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
