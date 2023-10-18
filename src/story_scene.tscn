@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnq5jve23x47a"]
+[gd_scene load_steps=7 format=3 uid="uid://bnq5jve23x47a"]
 
 [ext_resource type="Script" path="res://story_scene.gd" id="1_70gc6"]
-[ext_resource type="Texture2D" uid="uid://orsh63dft8aq" path="res://World/GrassBackground.png" id="1_ekuoc"]
+[ext_resource type="Texture2D" uid="uid://twjb7gl01nfe" path="res://Other Asets/space-bg1.png" id="2_34iox"]
 [ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="3_hxugd"]
 [ext_resource type="AudioStream" uid="uid://d3x48h5g4ec5h" path="res://Music and Sounds/Menu Move.wav" id="3_pmyl0"]
+[ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="5_tdeyi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu5fg"]
 bg_color = Color(0.207843, 0.207843, 0.207843, 0.584314)
@@ -26,7 +27,7 @@ custom_minimum_size = Vector2(320, 180)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_ekuoc")
+texture = ExtResource("2_34iox")
 stretch_mode = 1
 
 [node name="TextBox" type="Control" parent="."]
@@ -51,6 +52,7 @@ offset_right = 274.0
 offset_bottom = 175.0
 theme_override_fonts/normal_font = ExtResource("3_hxugd")
 theme_override_font_sizes/normal_font_size = 16
+autowrap_mode = 1
 
 [node name="Label" type="Label" parent="TextBox"]
 layout_mode = 0
@@ -80,4 +82,7 @@ stream = ExtResource("3_pmyl0")
 volume_db = -20.0
 pitch_scale = 2.31
 
+[node name="AutoFadeNode" parent="." instance=ExtResource("5_tdeyi")]
+
 [connection signal="timeout" from="TextBox/Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_done" from="AutoFadeNode" to="." method="_on_auto_fade_node_animation_done"]

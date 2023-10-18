@@ -6,7 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 var current_slide = 0
-var story = ["adsfkjhlasd flkjhasdlkfjhasldkjfha lsdkjfhalsdkjfh askdljfhalskjdfhaklsjdf hasdf", "asdflkja sdlkfja;skdlfja ;lsdkfj"]
+var story = ["adsfkjhlasd flkjhasdlkfjhasldkjfha lsdkjfhalsdkjfh askdljfhalskjdfhaklsjdf hasdf", "asdflkja sdlkfja;skdlfja ;lsdkfj", "[Press Enter to start the game]"]
 
 @onready var label = $TextBox/RichTextLabel
 @onready var doneMark = $"TextBox/Done Label"
@@ -19,8 +19,12 @@ var current_story_index = 0
 
 var shiftUp = false
 
+var isReady = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if !isReady:
+		return
 	if current_story_index < len(story[current_slide]):
 		label.append_text(story[current_slide][current_story_index])
 		current_story_index += 1
@@ -56,3 +60,7 @@ func _process(delta):
 func _on_timer_timeout():
 	shiftUp = !shiftUp
 	
+
+
+func _on_auto_fade_node_animation_done():
+	isReady = true

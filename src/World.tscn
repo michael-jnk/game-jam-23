@@ -1154,6 +1154,7 @@ position_smoothing_speed = 10.0
 [node name="Player" parent="World 2/YSortNode" instance=ExtResource("1_nc3is")]
 position = Vector2(135, 65)
 world = 2
+DASH_COOLDOWN = 0.1
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="World 2/YSortNode/Player"]
 remote_path = NodePath("../../Camera2D")
@@ -1216,6 +1217,7 @@ offset_left = 1.0
 offset_top = 19.0
 offset_right = 230.0
 offset_bottom = 48.0
+DASH_COOLDOWN_TIME = 0.15
 
 [node name="TransitionScreen" type="ColorRect" parent="CanvasLayer"]
 offset_right = 320.0
