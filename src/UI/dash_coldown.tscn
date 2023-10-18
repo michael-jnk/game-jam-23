@@ -1,21 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cugpbasgcliap"]
+[gd_scene load_steps=5 format=3 uid="uid://cugpbasgcliap"]
 
 [ext_resource type="Script" path="res://UI/dash_coldown.gd" id="1_a4y67"]
+[ext_resource type="Texture2D" uid="uid://b38bib1od72ia" path="res://Other Asets/Screenshot 2023-10-17 at 10.10.56 PM.png" id="2_rf1qs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1np1"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r10p"]
-bg_color = Color(0, 0.6, 0.6, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-anti_aliasing = false
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4k0o"]
+texture = ExtResource("2_rf1qs")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 901, 250)
 
 [node name="DashColdown" type="Control"]
 layout_mode = 3
@@ -26,10 +28,10 @@ script = ExtResource("1_a4y67")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_right = 50.0
-offset_bottom = 10.0
+offset_right = 70.0
+offset_bottom = 3.0
 theme_override_styles/background = SubResource("StyleBoxFlat_f1np1")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6r10p")
+theme_override_styles/fill = SubResource("StyleBoxTexture_m4k0o")
 step = 1.0
 show_percentage = false
 

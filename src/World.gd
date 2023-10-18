@@ -7,10 +7,14 @@ extends Node2D
 
 @onready var playerController = $PlayerController
 
+var enemies_killed = 0 
+const enemiesKillsNeeded = 3
+
 enum {
 	WORLD1,
 	WORLD2
 }
+
 
 var currentWorld = WORLD2
 # Called when the node enters the scene tree for the first time.
@@ -52,3 +56,8 @@ func _on_fader_animation_finished(anim_name):
 			currentWorld = WORLD1
 			playerController.currentWorld = WORLD1
 		
+
+func enemy_died(isWorld1):
+	enemies_killed += 1
+	if enemies_killed >= enemiesKillsNeeded:
+		print("Done!")

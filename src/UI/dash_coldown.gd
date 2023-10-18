@@ -8,7 +8,7 @@ extends Control
 func _process(delta):
 	progressVar.value = (DASH_COOLDOWN_TIME - timer.time_left) * 100/ DASH_COOLDOWN_TIME
 
-func _on_player_dash_started():
+func start_dash():
 	timer.start(DASH_COOLDOWN_TIME)
 	progressVar.value = 0
 

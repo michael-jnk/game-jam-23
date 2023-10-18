@@ -7,6 +7,7 @@ var MAX_SPEED = 80
 
 const ACCELLERATION = 200
 
+@onready var world = $/root/World
 
 
 enum {
@@ -62,6 +63,7 @@ func _physics_process(delta):
 		velocity += softCollision.get_push_vector() * delta * 400
 	
 	if health <= 0:
+		world.enemy_died(false)
 		var enemyDeathEffect = EnemyDeathEffect.instantiate()
 		get_parent().add_child(enemyDeathEffect)
 		enemyDeathEffect.global_position = global_position

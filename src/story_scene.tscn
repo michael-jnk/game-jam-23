@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnq5jve23x47a"]
+[gd_scene load_steps=6 format=3 uid="uid://bnq5jve23x47a"]
 
 [ext_resource type="Script" path="res://story_scene.gd" id="1_70gc6"]
 [ext_resource type="Texture2D" uid="uid://orsh63dft8aq" path="res://World/GrassBackground.png" id="1_ekuoc"]
+[ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="3_hxugd"]
 [ext_resource type="AudioStream" uid="uid://d3x48h5g4ec5h" path="res://Music and Sounds/Menu Move.wav" id="3_pmyl0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu5fg"]
@@ -48,7 +49,8 @@ offset_left = 53.0
 offset_top = 111.0
 offset_right = 274.0
 offset_bottom = 175.0
-theme_override_font_sizes/normal_font_size = 10
+theme_override_fonts/normal_font = ExtResource("3_hxugd")
+theme_override_font_sizes/normal_font_size = 16
 
 [node name="Label" type="Label" parent="TextBox"]
 layout_mode = 0
@@ -65,6 +67,10 @@ offset_top = 134.0
 offset_right = 285.0
 offset_bottom = 160.0
 
+[node name="Timer" type="Timer" parent="TextBox"]
+wait_time = 0.1
+autostart = true
+
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pmyl0")
 volume_db = -20.0
@@ -73,3 +79,5 @@ volume_db = -20.0
 stream = ExtResource("3_pmyl0")
 volume_db = -20.0
 pitch_scale = 2.31
+
+[connection signal="timeout" from="TextBox/Timer" to="." method="_on_timer_timeout"]

@@ -11,7 +11,6 @@ const CHARGE_TIME = 1
 const ACCELLERATION = 200
 
 
-
 enum {
 	IDLE,
 	WANDER,
@@ -20,7 +19,7 @@ enum {
 	CHARGE,
 	COOLDOWN
 }
-
+@onready var world = $/root/World
 @onready var hurtbox = $Hurtbox
 @onready var wanderController = $WanderController
 @onready var  detectionZone = $PlayerDetectionZone
@@ -101,6 +100,7 @@ func _physics_process(delta):
 		velocity += softCollision.get_push_vector() * delta * 400
 	
 	if health <= 0:
+		world.enemy_died(false)
 		var enemyDeathEffect = EnemyDeathEffect.instantiate()
 		get_parent().add_child(enemyDeathEffect)
 		enemyDeathEffect.global_position = global_position

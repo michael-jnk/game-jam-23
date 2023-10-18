@@ -18,6 +18,7 @@ enum {
 }
 
 @onready var currentWorld
+@onready var dashCooldown = $"../CanvasLayer/DashColdown"
 
 signal health_changed
 
@@ -45,3 +46,8 @@ func _on_player_player_hit(world):
 		if player2 != null:
 			player2.queue_free()
 		get_tree().change_scene_to_file("res://death_scene.tscn")
+
+
+func _on_player_dash_started():
+	dashCooldown.start_dash()
+	

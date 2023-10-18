@@ -17,6 +17,8 @@ var click = false
 var current_story_rendered = ""
 var current_story_index = 0
 
+var shiftUp = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if current_story_index < len(story[current_slide]):
@@ -29,6 +31,11 @@ func _process(delta):
 		click = not click
 	else:
 		doneMark.text = "⌄"
+		if shiftUp:
+			doneMark.position.y += 1
+		else:
+			doneMark.position.y -= 1
+		
 	
 	if Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("attack"):
 		label.clear()
@@ -44,3 +51,8 @@ func _process(delta):
 	
 		
 
+
+
+func _on_timer_timeout():
+	shiftUp = !shiftUp
+	
