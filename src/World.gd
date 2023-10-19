@@ -6,6 +6,7 @@ extends Node2D
 @onready var transitionEffect = $TransitionSoundEffect
 
 @onready var playerController = $PlayerController
+@onready var modulater = $CanvasModulate
 
 var enemies_killed = 0 
 const enemiesKillsNeeded = 3
@@ -42,6 +43,7 @@ func _on_fader_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
 #		print("hello!")
 		if currentWorld == WORLD1:
+			modulater.visible = false
 			camera2.position_smoothing_enabled = false
 			camera1.enabled = false
 			camera2.enabled = true
@@ -49,6 +51,7 @@ func _on_fader_animation_finished(anim_name):
 			currentWorld = WORLD2
 			playerController.currentWorld = WORLD2
 		elif currentWorld == WORLD2:
+			modulater.visible = true
 			camera1.position_smoothing_enabled = false
 			camera2.enabled = false
 			camera1.enabled = true

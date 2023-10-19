@@ -4,7 +4,7 @@ extends Node
 @export var invincibilityTime = 0.7
 @export var max_health = 5
 @export var damage = 5
-@export var invincibilityDuration = 5
+@export var invincibilityDuration = .5
 var health = 5
 
 @onready var player1 = $"../World 1/YSortNode/Player"
