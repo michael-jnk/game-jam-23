@@ -311,7 +311,7 @@ position_smoothing_speed = 10.0
 [node name="Player" parent="World 1/YSortNode" instance=ExtResource("1_nc3is")]
 position = Vector2(2261, 367)
 world = 1
-DASH_COOLDOWN = 0.6
+DASH_COOLDOWN = 0.5
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="World 1/YSortNode/Player"]
 remote_path = NodePath("../../Camera2D")
@@ -408,7 +408,7 @@ position_smoothing_speed = 10.0
 [node name="Player" parent="World 2/YSortNode" instance=ExtResource("1_nc3is")]
 position = Vector2(511, 367)
 world = 2
-DASH_COOLDOWN = 0.1
+DASH_COOLDOWN = 0.5
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="World 2/YSortNode/Player"]
 remote_path = NodePath("../../Camera2D")
