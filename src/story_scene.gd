@@ -34,7 +34,7 @@ func _on_auto_fade_node_animation_done():
 
 func _on_text_box_slide_reached(slideNumber):
 	print(slideNumber)
-	if slideNumber == 3:
+	if slideNumber == 1:
 		animationPlayer.play("ship_zoom_in")
 	
 

@@ -49,7 +49,7 @@ func _process(delta):
 		doneMark.text = "⌄"
 		
 	
-	if Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") or Input.is_action_just_pressed("ui_accept"):
 		label.clear()
 		current_story_index = 0
 		current_slide += 1
@@ -58,4 +58,6 @@ func _process(delta):
 		
 	if current_slide == len(story):
 		emit_signal("story_done")
-		
+		current_story_index = 0
+		current_slide = 0
+		isReady = false

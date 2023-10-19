@@ -1,21 +1,25 @@
-[gd_scene load_steps=23 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=27 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
-[ext_resource type="Texture2D" uid="uid://orsh63dft8aq" path="res://World/GrassBackground.png" id="1_uvycp"]
 [ext_resource type="PackedScene" uid="uid://boaky0itkvhrw" path="res://World/bush.tscn" id="2_1lxpp"]
 [ext_resource type="Texture2D" uid="uid://c3fpg566btnjg" path="res://World/DirtTileset.png" id="2_7i2ia"]
+[ext_resource type="Texture2D" uid="uid://neteekuio7xm" path="res://Other Asets/title-screen-animation1.png" id="2_ia644"]
 [ext_resource type="PackedScene" uid="uid://bna68cd5ddhfp" path="res://World/health_ui.tscn" id="2_q2csq"]
 [ext_resource type="PackedScene" uid="uid://btrdufnv36yo" path="res://Enemies/bat.tscn" id="4_tkaki"]
 [ext_resource type="PackedScene" uid="uid://ksdcynvacir3" path="res://World/grass.tscn" id="6_ayrvu"]
 [ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="8_x3qk6"]
+[ext_resource type="PackedScene" uid="uid://cwiryly0rattn" path="res://World/help_node.tscn" id="10_6212n"]
 [ext_resource type="PackedScene" uid="uid://ve7u2xd0x784" path="res://Enemies/dash-alien.tscn" id="10_sw5wt"]
 [ext_resource type="PackedScene" uid="uid://v7m2xcfs13u4" path="res://World/ship_map.tscn" id="10_uuwue"]
 [ext_resource type="Script" path="res://PlayerController.gd" id="11_ae5qn"]
 [ext_resource type="Script" path="res://UI/Fader.gd" id="11_svbhb"]
 [ext_resource type="PackedScene" uid="uid://cugpbasgcliap" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
 [ext_resource type="AudioStream" uid="uid://d4ii20unmpcya" path="res://Music and Sounds/Music.mp3" id="13_0g61i"]
+[ext_resource type="PackedScene" uid="uid://b5bebuyj5oih1" path="res://UI/text_box.tscn" id="13_c4d2n"]
 [ext_resource type="AudioStream" uid="uid://biswkf0bmk5tl" path="res://Music and Sounds/TransitionPlaceholder2.mp3" id="14_gdhli"]
+[ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="16_qauxw"]
+[ext_resource type="Script" path="res://UI/HelpController.gd" id="19_y5dgo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmnt4"]
 texture = ExtResource("2_7i2ia")
@@ -280,7 +284,7 @@ texture_repeat = 2
 position = Vector2(159, -177.093)
 rotation = -0.000780472
 scale = Vector2(2.304, 1.478)
-texture = ExtResource("1_uvycp")
+texture = ExtResource("2_ia644")
 centered = false
 offset = Vector2(-200, -100)
 region_enabled = true
@@ -364,11 +368,31 @@ position = Vector2(338, 162)
 [node name="Bat4" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(-92, 37)
 
+[node name="Bat5" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
+
 [node name="Bat3" parent="World 1/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(375, 44)
 
-[node name="DashAliens" type="Node2D" parent="World 1"]
+[node name="DashAliens" type="Node2D" parent="World 1/YSortNode"]
 y_sort_enabled = true
+
+[node name="InteractionObjects" type="Node2D" parent="World 1/YSortNode"]
+
+[node name="HelpNode4" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
+position = Vector2(1679, 383)
+
+[node name="HelpNode2" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
+position = Vector2(2182, 210)
+
+[node name="HelpNode" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
+position = Vector2(2181, 302)
+
+[node name="HelpNode3" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
+position = Vector2(2036, 333)
+
+[node name="HelpNode5" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
+position = Vector2(2161, 444)
+helpNumber = 4
 
 [node name="World 2" type="Node2D" parent="."]
 position = Vector2(-1000, 2.08165e-12)
@@ -379,7 +403,7 @@ texture_repeat = 2
 position = Vector2(-1583.99, -177.093)
 rotation = -0.000780472
 scale = Vector2(2.30413, 1.33083)
-texture = ExtResource("1_uvycp")
+texture = ExtResource("2_ia644")
 centered = false
 offset = Vector2(-200, -100)
 region_enabled = true
@@ -446,21 +470,37 @@ position = Vector2(281, 43)
 [node name="Bats" type="Node2D" parent="World 2/YSortNode"]
 
 [node name="Bat4" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
-position = Vector2(-92, 37)
+position = Vector2(54, 391)
 
 [node name="Bat3" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(375, 44)
 
-[node name="DashAliens" type="Node2D" parent="World 2"]
-y_sort_enabled = true
+[node name="Bat" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
+position = Vector2(299, 380)
 
-[node name="DashAlien" parent="World 2/DashAliens" instance=ExtResource("10_sw5wt")]
+[node name="DashAliens" type="Node2D" parent="World 2/YSortNode"]
+y_sort_enabled = true
+position = Vector2(1, -10)
+
+[node name="DashAlien" parent="World 2/YSortNode/DashAliens" instance=ExtResource("10_sw5wt")]
 position = Vector2(54, 187)
 
+[node name="DashAlien2" parent="World 2/YSortNode/DashAliens" instance=ExtResource("10_sw5wt")]
+position = Vector2(3036, 514)
+
+[node name="DashAlien3" parent="World 2/YSortNode/DashAliens" instance=ExtResource("10_sw5wt")]
+position = Vector2(2749, 404)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-34, -48)
 color = Color(0.878431, 0.717647, 0.690196, 0.72549)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HelpController" type="Node" parent="CanvasLayer"]
+script = ExtResource("19_y5dgo")
+
+[node name="ArtifactController" type="Node" parent="CanvasLayer"]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_right = 40.0
@@ -476,11 +516,15 @@ offset_right = 230.0
 offset_bottom = 48.0
 DASH_COOLDOWN_TIME = 0.15
 
+[node name="HelpTextBox" parent="CanvasLayer" instance=ExtResource("13_c4d2n")]
+
 [node name="TransitionScreen" type="ColorRect" parent="CanvasLayer"]
 offset_right = 320.0
 offset_bottom = 179.0
 scale = Vector2(1.5, 1.5)
 color = Color(0, 0, 0, 0)
+
+[node name="AutoFadeNode" parent="CanvasLayer" instance=ExtResource("16_qauxw")]
 
 [node name="Fader" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -501,5 +545,6 @@ stream = ExtResource("14_gdhli")
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]
 [connection signal="player_hit" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
+[connection signal="story_done" from="CanvasLayer/HelpTextBox" to="CanvasLayer/HelpController" method="_on_help_text_box_story_done"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="CanvasLayer/Fader" method="_on_animation_finished"]
