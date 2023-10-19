@@ -1,17 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnq5jve23x47a"]
+[gd_scene load_steps=8 format=3 uid="uid://bnq5jve23x47a"]
 
 [ext_resource type="Script" path="res://story_scene.gd" id="1_70gc6"]
-[ext_resource type="Texture2D" uid="uid://twjb7gl01nfe" path="res://Other Asets/space-bg1.png" id="2_34iox"]
-[ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="3_hxugd"]
-[ext_resource type="AudioStream" uid="uid://d3x48h5g4ec5h" path="res://Music and Sounds/Menu Move.wav" id="3_pmyl0"]
+[ext_resource type="Texture2D" uid="uid://de8umtfpho437" path="res://UI/ship-zoom-in-draft.png" id="2_pq4n2"]
+[ext_resource type="PackedScene" uid="uid://b5bebuyj5oih1" path="res://UI/text_box.tscn" id="3_sdxuu"]
 [ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="5_tdeyi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu5fg"]
-bg_color = Color(0.207843, 0.207843, 0.207843, 0.584314)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
+[sub_resource type="Animation" id="Animation_ckdon"]
+resource_name = "ship_zoom_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12]
+}
+
+[sub_resource type="Animation" id="Animation_tksul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6u2hb"]
+_data = {
+"RESET": SubResource("Animation_tksul"),
+"ship_zoom_in": SubResource("Animation_ckdon")
+}
 
 [node name="StoryScene" type="Control"]
 layout_mode = 3
@@ -22,67 +50,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_70gc6")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(320, 180)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_34iox")
-stretch_mode = 1
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(161, 91)
+texture = ExtResource("2_pq4n2")
+hframes = 15
 
-[node name="TextBox" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="TextBox"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 107.0
-offset_right = 285.0
-offset_bottom = 177.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_eu5fg")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
-texture_filter = 1
-layout_mode = 2
-offset_left = 53.0
-offset_top = 111.0
-offset_right = 274.0
-offset_bottom = 175.0
-theme_override_fonts/normal_font = ExtResource("3_hxugd")
-theme_override_font_sizes/normal_font_size = 16
-autowrap_mode = 1
-
-[node name="Label" type="Label" parent="TextBox"]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 112.0
-offset_right = 53.0
-offset_bottom = 138.0
-text = "*"
-
-[node name="Done Label" type="Label" parent="TextBox"]
-layout_mode = 0
-offset_left = 273.0
-offset_top = 134.0
-offset_right = 285.0
-offset_bottom = 160.0
-
-[node name="Timer" type="Timer" parent="TextBox"]
-wait_time = 0.1
-autostart = true
-
-[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_pmyl0")
-volume_db = -20.0
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_pmyl0")
-volume_db = -20.0
-pitch_scale = 2.31
+[node name="TextBox" parent="." instance=ExtResource("3_sdxuu")]
 
 [node name="AutoFadeNode" parent="." instance=ExtResource("5_tdeyi")]
 
-[connection signal="timeout" from="TextBox/Timer" to="." method="_on_timer_timeout"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6u2hb")
+}
+
+[connection signal="slide_reached" from="TextBox" to="." method="_on_text_box_slide_reached"]
+[connection signal="story_done" from="TextBox" to="." method="_on_text_box_story_done"]
 [connection signal="animation_done" from="AutoFadeNode" to="." method="_on_auto_fade_node_animation_done"]

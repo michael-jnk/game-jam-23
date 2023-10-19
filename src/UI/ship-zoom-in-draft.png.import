@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ijrais60efpp"
-path="res://.godot/imported/death-screen.png-12af8f7d5a0970b8c923de313552876e.ctex"
+uid="uid://de8umtfpho437"
+path="res://.godot/imported/ship-zoom-in-draft.png-cbcbeb7be8b370e2c585304397555cb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://death-screen.png"
-dest_files=["res://.godot/imported/death-screen.png-12af8f7d5a0970b8c923de313552876e.ctex"]
+source_file="res://UI/ship-zoom-in-draft.png"
+dest_files=["res://.godot/imported/ship-zoom-in-draft.png-cbcbeb7be8b370e2c585304397555cb7.ctex"]
 
 [params]
 

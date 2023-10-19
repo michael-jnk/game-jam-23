@@ -1,60 +1,25 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 var current_slide = 0
 var story = ["adsfkjhlasd flkjhasdlkfjhasldkjfha lsdkjfhalsdkjfh askdljfhalskjdfhaklsjdf hasdf", "asdflkja sdlkfja;skdlfja ;lsdkfj", "[Press Enter to start the game]"]
 
-@onready var label = $TextBox/RichTextLabel
-@onready var doneMark = $"TextBox/Done Label"
-@onready var clickPlayer1 = $AudioStreamPlayer1
-@onready var clickPlayer2 = $AudioStreamPlayer2
+
 
 var click = false
 var current_story_rendered = ""
 var current_story_index = 0
 
+@onready var textBox = $TextBox
+
 var shiftUp = false
 
 var isReady = false
+@onready var animationPlayer = $AnimationPlayer
+var slowBool = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if !isReady:
-		return
-	if current_story_index < len(story[current_slide]):
-		label.append_text(story[current_slide][current_story_index])
-		current_story_index += 1
-		if click:
-			clickPlayer1.play()
-		else:
-			clickPlayer2.play()
-		click = not click
-	else:
-		doneMark.text = "⌄"
-		if shiftUp:
-			doneMark.position.y += 1
-		else:
-			doneMark.position.y -= 1
-		
 	
-	if Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("attack"):
-		label.clear()
-		current_story_index = 0
-		current_slide += 1
-		doneMark.text = ""
-		
-		if current_slide == len(story):
-			get_tree().change_scene_to_file("res://World.tscn")
-		
-#func render_text(s):
-#	label.
-	
-		
-
 
 
 func _on_timer_timeout():
@@ -64,3 +29,15 @@ func _on_timer_timeout():
 
 func _on_auto_fade_node_animation_done():
 	isReady = true
+	textBox.render_story(story)
+
+
+func _on_text_box_slide_reached(slideNumber):
+	print(slideNumber)
+	if slideNumber == 3:
+		animationPlayer.play("ship_zoom_in")
+	
+
+
+func _on_text_box_story_done():
+	get_tree().change_scene_to_file("res://World.tscn")

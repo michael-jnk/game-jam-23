@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5bebuyj5oih1"]
+
+[ext_resource type="Script" path="res://UI/TextBox.gd" id="1_dtvmj"]
+[ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="2_8ehej"]
+[ext_resource type="AudioStream" uid="uid://d3x48h5g4ec5h" path="res://Music and Sounds/Menu Move.wav" id="3_1faam"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu5fg"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 0.584314)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="TextBox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dtvmj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 107.0
+offset_right = 285.0
+offset_bottom = 177.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eu5fg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 53.0
+offset_top = 111.0
+offset_right = 274.0
+offset_bottom = 175.0
+theme_override_fonts/normal_font = ExtResource("2_8ehej")
+theme_override_font_sizes/normal_font_size = 16
+autowrap_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 112.0
+offset_right = 53.0
+offset_bottom = 138.0
+text = "*"
+
+[node name="Done Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 134.0
+offset_right = 285.0
+offset_bottom = 160.0
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1faam")
+volume_db = -20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1faam")
+volume_db = -20.0
+pitch_scale = 2.31
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
