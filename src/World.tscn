@@ -8,19 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://btrdufnv36yo" path="res://Enemies/bat.tscn" id="4_tkaki"]
 [ext_resource type="PackedScene" uid="uid://ksdcynvacir3" path="res://World/grass.tscn" id="6_ayrvu"]
 [ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="8_x3qk6"]
-[ext_resource type="PackedScene" uid="uid://vpf6e70bp3ab" path="res://World/artifact.tscn" id="10_8s6an"]
-[ext_resource type="PackedScene" uid="uid://cwiryly0rattn" path="res://World/help_node.tscn" id="10_6212n"]
+[ext_resource type="PackedScene" uid="uid://oy0w1x0g8qnb" path="res://World/artifact.tscn" id="10_8s6an"]
+[ext_resource type="PackedScene" path="res://World/help_node.tscn" id="10_6212n"]
 [ext_resource type="PackedScene" uid="uid://ve7u2xd0x784" path="res://Enemies/dash-alien.tscn" id="10_sw5wt"]
 [ext_resource type="PackedScene" uid="uid://v7m2xcfs13u4" path="res://World/ship_map.tscn" id="10_uuwue"]
 [ext_resource type="Script" path="res://PlayerController.gd" id="11_ae5qn"]
 [ext_resource type="Script" path="res://UI/Fader.gd" id="11_svbhb"]
-[ext_resource type="PackedScene" uid="uid://cugpbasgcliap" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
+[ext_resource type="PackedScene" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
 [ext_resource type="AudioStream" uid="uid://d4ii20unmpcya" path="res://Music and Sounds/Music.mp3" id="13_0g61i"]
 [ext_resource type="Script" path="res://UI/ArtifactController.gd" id="13_8kd3m"]
-[ext_resource type="PackedScene" uid="uid://b5bebuyj5oih1" path="res://UI/text_box.tscn" id="13_c4d2n"]
+[ext_resource type="PackedScene" path="res://UI/text_box.tscn" id="13_c4d2n"]
 [ext_resource type="AudioStream" uid="uid://biswkf0bmk5tl" path="res://Music and Sounds/TransitionPlaceholder2.mp3" id="14_gdhli"]
-[ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="16_qauxw"]
-[ext_resource type="PackedScene" uid="uid://m160lv3fj4xv" path="res://artifact_ui.tscn" id="17_mksqf"]
+[ext_resource type="PackedScene" path="res://UI/auto_fade_node.tscn" id="16_qauxw"]
+[ext_resource type="PackedScene" path="res://artifact_ui.tscn" id="17_mksqf"]
 [ext_resource type="Script" path="res://UI/HelpController.gd" id="19_y5dgo"]
 
 [sub_resource type="Animation" id="Animation_62nka"]
@@ -319,6 +319,9 @@ autoplay = true
 
 [node name="TransitionSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_gdhli")
+
+[node name="Darkness" type="DirectionalLight2D" parent="."]
+blend_mode = 1
 
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]

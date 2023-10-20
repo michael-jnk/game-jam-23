@@ -25,6 +25,7 @@ func _ready():
 	playerController.currentWorld = currentWorld
 	playerController.player1.onWorld = currentWorld == WORLD1
 	playerController.player2.onWorld = currentWorld == WORLD2
+	modulater.visible = currentWorld == WORLD1
 
 			
 

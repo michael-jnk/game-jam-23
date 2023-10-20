@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://g0ad734tja55"]
+[gd_scene load_steps=84 format=3 uid="uid://g0ad734tja55"]
 
 [ext_resource type="Script" path="res://Player/player.tres.gd" id="1_qskqa"]
 [ext_resource type="Texture2D" uid="uid://ck15jfik6gyfv" path="res://Player/mc-sprite-real.png" id="2_7ml4x"]
@@ -1281,10 +1281,23 @@ height = 33.9989
 [sub_resource type="CircleShape2D" id="CircleShape2D_aj2fy"]
 radius = 124.036
 
+[sub_resource type="Gradient" id="Gradient_famlj"]
+offsets = PackedFloat32Array(0.306709, 0.747604)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mwmuj"]
+gradient = SubResource("Gradient_famlj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ydjr"]
+radius = 5.0
+height = 14.0
+
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -8)
-collision_layer = 2
+collision_layer = 0
 collision_mask = 33
 script = ExtResource("1_qskqa")
 metadata/_edit_group_ = true
@@ -1348,6 +1361,22 @@ collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PremonitionDetectionZone"]
 shape = SubResource("CircleShape2D_aj2fy")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(3, 3)
+blend_mode = 2
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_mwmuj")
+
+[node name="Location" type="Area2D" parent="."]
+position = Vector2(0, 8)
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Location"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6ydjr")
+debug_color = Color(0, 0.6, 0.701961, 0)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="PremonitionDetectionZone" to="." method="_on_premonition_detection_zone_area_entered"]

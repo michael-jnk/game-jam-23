@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://vpf6e70bp3ab"]
+[gd_scene load_steps=4 format=3 uid="uid://oy0w1x0g8qnb"]
 
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="1_hx7rx"]
 [ext_resource type="Script" path="res://World/artifact.gd" id="1_ohx5i"]

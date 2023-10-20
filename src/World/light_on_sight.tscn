@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://uyjqvmojkv3o"]
+
+[ext_resource type="Script" path="res://World/light_on_sight.gd" id="1_qa8rg"]
+
+[sub_resource type="Gradient" id="Gradient_ngh4g"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.13738, 0.738019)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2vqx"]
+gradient = SubResource("Gradient_ngh4g")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_56lne"]
+radius = 171.549
+
+[node name="LightOnSight" type="Node2D"]
+script = ExtResource("1_qa8rg")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+blend_mode = 2
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_h2vqx")
+texture_scale = 5.54
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_56lne")
+debug_color = Color(0, 0.6, 0.701961, 0.00392157)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
