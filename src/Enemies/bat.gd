@@ -22,6 +22,7 @@ enum {
 @onready var sprite = $animatedBat
 @onready var softCollision = $SoftCollision
 const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
+@onready var visibilityController = $"Enemy Visibility Controller"
 
 @onready var hitbox = $Hitbox
 
@@ -74,6 +75,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	modulate.a = visibilityController.getAlpha()
 
 func accellerate_towards(point, delta):
 	var direction = global_position.direction_to(point)

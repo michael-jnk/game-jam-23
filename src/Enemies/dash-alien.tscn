@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ve7u2xd0x784"]
+[gd_scene load_steps=27 format=3 uid="uid://ve7u2xd0x784"]
 
 [ext_resource type="Script" path="res://Enemies/dash-alien.gd" id="1_2xefc"]
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="2_le0nj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Enemies/PremonitionArea.gd" id="10_j3gca"]
 [ext_resource type="Script" path="res://Enemies/ChargeController.gd" id="11_xsg81"]
 [ext_resource type="PackedScene" uid="uid://lb3s78b3qjol" path="res://Effects/charge_particles.tscn" id="13_30f4e"]
+[ext_resource type="PackedScene" uid="uid://dsl471sfnj7d5" path="res://Enemies/enemy_visibility_controller.tscn" id="13_yxk6h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdbqx"]
 radius = 8.0
@@ -171,6 +172,8 @@ shape = SubResource("CircleShape2D_fs5lv")
 
 [node name="ChargeParticles" parent="." instance=ExtResource("13_30f4e")]
 position = Vector2(0, 7)
+
+[node name="Enemy Visibility Controller" parent="." instance=ExtResource("13_yxk6h")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_area_entered"]

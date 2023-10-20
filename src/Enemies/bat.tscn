@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://btrdufnv36yo"]
+[gd_scene load_steps=23 format=3 uid="uid://btrdufnv36yo"]
 
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="1_a6sk8"]
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_c815c"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://rgmmijyfgg3l" path="res://Enemies/player_detection_zone.tscn" id="6_0y87r"]
 [ext_resource type="Script" path="res://Enemies/SoftCollision.gd" id="8_5q2rm"]
 [ext_resource type="Script" path="res://Enemies/WanderController.gd" id="9_w6cl1"]
+[ext_resource type="PackedScene" uid="uid://dsl471sfnj7d5" path="res://Enemies/enemy_visibility_controller.tscn" id="10_cwjmj"]
 [ext_resource type="Script" path="res://Enemies/PremonitionArea.gd" id="10_hhcl1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdbqx"]
@@ -80,7 +81,6 @@ height = 12.0
 radius = 16.0312
 
 [node name="Bat" type="CharacterBody2D"]
-position = Vector2(103, 75)
 collision_layer = 16
 script = ExtResource("1_c815c")
 
@@ -142,6 +142,8 @@ script = ExtResource("10_hhcl1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PremonitionArea"]
 shape = SubResource("CircleShape2D_fs5lv")
+
+[node name="Enemy Visibility Controller" parent="." instance=ExtResource("10_cwjmj")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_area_entered"]

@@ -7,7 +7,10 @@ var premonition = null
 
 var target = null
 
-@onready var playerDetect = $"../PlayerDetectionZone"
+@onready var visibilityController = $"../Enemy Visibility Controller"
+
+const MAX_ENERGY = 0.41 
+# dont forget to change this when you change the particle light energy!!
 
 func create_premonition(targ):
 	target = targ
@@ -25,4 +28,5 @@ func remove_premonition():
 func _physics_process(delta):
 	if premonitionActive:
 		premonition.position = global_position - target.global_position
-		premonition.visible = playerDetect.player_is_detected()
+		premonition.modulate.a = visibilityController.getAlpha()
+		premonition.get_node("PointLight2D").energy = MAX_ENERGY * visibilityController.getAlpha()
