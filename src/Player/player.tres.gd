@@ -92,14 +92,11 @@ func move_state(delta):
 		animationState.travel("Run")
 		velocity = velocity.clamp(-Vector2.ONE * MAX_SPEED, Vector2.ONE * MAX_SPEED)
 		
-		if dashCooldown > 0:
-			dashCooldown -= delta
-		elif Input.is_action_just_pressed("dash"):
+		if Input.is_action_just_pressed("dash"):
 			emit_signal("dash_started")
 			state = DASH
 			dashLengthLeft = DASHLENGTH
 			evenFrame = false
-			dashCooldown = DASH_COOLDOWN
 	else:
 		velocity =  velocity.move_toward(Vector2.ZERO, FRICTION)
 		animationState.travel("Idle")

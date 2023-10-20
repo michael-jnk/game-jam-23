@@ -1345,6 +1345,7 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 position = Vector2(-2.08165e-12, 0)
 collision_layer = 2
 collision_mask = 8
+damage = 3
 knockback_strength = 120
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
@@ -1364,8 +1365,11 @@ shape = SubResource("CircleShape2D_aj2fy")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(2.815, 2.815)
+energy = 0.8
 blend_mode = 2
 shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.2
 texture = SubResource("GradientTexture2D_mwmuj")
 
 [node name="Location" type="Area2D" parent="."]

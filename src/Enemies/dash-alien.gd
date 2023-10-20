@@ -119,7 +119,7 @@ func accellerate_towards(point, delta):
 	sprite.flip_h = velocity.x < 0
 		
 func _on_hurtbox_area_entered(area):
-	health -= 1
+	health -= area.damage
 	hurtbox.create_hit_effect()
 	knockback = area.get_knockback()
 	

@@ -21,6 +21,8 @@ script = ExtResource("1_qa8rg")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 blend_mode = 2
 shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 2.3
 texture = SubResource("GradientTexture2D_h2vqx")
 texture_scale = 5.54
 
