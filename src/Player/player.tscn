@@ -1363,7 +1363,7 @@ collision_mask = 128
 shape = SubResource("CircleShape2D_aj2fy")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(3, 3)
+scale = Vector2(2.815, 2.815)
 blend_mode = 2
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_mwmuj")

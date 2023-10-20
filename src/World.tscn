@@ -321,7 +321,11 @@ autoplay = true
 stream = ExtResource("14_gdhli")
 
 [node name="Darkness" type="DirectionalLight2D" parent="."]
-blend_mode = 1
+color = Color(0, 0, 0, 1)
+blend_mode = 2
+
+[node name="Editor Light" type="DirectionalLight2D" parent="."]
+editor_only = true
 
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]
