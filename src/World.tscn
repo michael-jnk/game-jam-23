@@ -206,7 +206,6 @@ rotation = 1.5708
 position = Vector2(-1000, 2.08165e-12)
 
 [node name="Background" type="Sprite2D" parent="World 2"]
-modulate = Color(1, 0.447059, 1, 1)
 light_mask = 2
 texture_repeat = 2
 position = Vector2(-1583.99, -177.093)
