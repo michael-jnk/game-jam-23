@@ -30,7 +30,7 @@ func _ready():
 			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if Input.is_action_just_pressed("change_position"):
 		playerController.currentWorld = currentWorld
 		playerController.player1.onWorld = !playerController.player1.onWorld

@@ -1,8 +1,9 @@
-[gd_scene load_steps=56 format=3 uid="uid://v7m2xcfs13u4"]
+[gd_scene load_steps=57 format=3 uid="uid://v7m2xcfs13u4"]
 
 [ext_resource type="Texture2D" uid="uid://bjqk1jsp1tyk4" path="res://World/CliffTileset.png" id="1_hm3e8"]
 [ext_resource type="Texture2D" uid="uid://c3fpg566btnjg" path="res://World/DirtTileset.png" id="2_yl5wk"]
 [ext_resource type="PackedScene" uid="uid://uyjqvmojkv3o" path="res://World/light_on_sight.tscn" id="3_2fsvw"]
+[ext_resource type="PackedScene" uid="uid://dki01f67ijqwf" path="res://World/door.tscn" id="4_nidnr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1l3m"]
 texture = ExtResource("2_yl5wk")
@@ -1039,7 +1040,7 @@ layer_0/tile_data = PackedInt32Array(-393234, 131074, 3, -393235, 65538, 3, -393
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="LightOnSight" parent="Lights" instance=ExtResource("3_2fsvw")]
-position = Vector2(-791.701, -144.408)
+position = Vector2(-689.14, -141.539)
 
 [node name="LightOnSight7" parent="Lights" instance=ExtResource("3_2fsvw")]
 position = Vector2(-726.026, -244.824)
@@ -1058,3 +1059,8 @@ position = Vector2(-789.902, -79.3765)
 
 [node name="LightOnSight6" parent="Lights" instance=ExtResource("3_2fsvw")]
 position = Vector2(-842.982, 7.65073)
+
+[node name="Door" parent="." instance=ExtResource("4_nidnr")]
+z_index = 1
+position = Vector2(-562.508, -140.412)
+rotation = 1.5708
