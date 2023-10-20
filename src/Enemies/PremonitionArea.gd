@@ -7,6 +7,8 @@ var premonition = null
 
 var target = null
 
+@onready var playerDetect = $"../PlayerDetectionZone"
+
 func create_premonition(targ):
 	target = targ
 	premonition = premonitionScene.instantiate()
@@ -23,3 +25,4 @@ func remove_premonition():
 func _physics_process(delta):
 	if premonitionActive:
 		premonition.position = global_position - target.global_position
+		premonition.visible = playerDetect.player_is_detected()

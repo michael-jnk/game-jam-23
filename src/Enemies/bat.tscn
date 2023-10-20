@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://btrdufnv36yo"]
+[gd_scene load_steps=22 format=3 uid="uid://btrdufnv36yo"]
 
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="1_a6sk8"]
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_c815c"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://2vl6a4xaitw2" path="res://Shadows/SmallShadow.png" id="2_kmuju"]
 [ext_resource type="PackedScene" uid="uid://cmif8gb6exa4c" path="res://Hitboxes and Hurtboxes/Hitbox.tscn" id="5_j8myb"]
 [ext_resource type="PackedScene" uid="uid://rgmmijyfgg3l" path="res://Enemies/player_detection_zone.tscn" id="6_0y87r"]
-[ext_resource type="Script" path="res://Enemies/player_detection_zone.gd" id="7_yn4mg"]
 [ext_resource type="Script" path="res://Enemies/SoftCollision.gd" id="8_5q2rm"]
 [ext_resource type="Script" path="res://Enemies/WanderController.gd" id="9_w6cl1"]
 [ext_resource type="Script" path="res://Enemies/PremonitionArea.gd" id="10_hhcl1"]
@@ -117,7 +116,6 @@ shape = SubResource("CapsuleShape2D_tkr4p")
 [node name="PlayerDetectionZone" parent="." instance=ExtResource("6_0y87r")]
 collision_layer = 32
 collision_mask = 6
-script = ExtResource("7_yn4mg")
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource("CircleShape2D_raqk6")
