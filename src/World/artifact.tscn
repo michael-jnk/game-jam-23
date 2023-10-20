@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://vpf6e70bp3ab"]
+
+[ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="1_hx7rx"]
+[ext_resource type="Script" path="res://World/artifact.gd" id="1_ohx5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0jcb"]
+radius = 11.0
+
+[node name="Artifact" type="Node2D"]
+script = ExtResource("1_ohx5i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Hurtbox" parent="." instance=ExtResource("1_hx7rx")]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_n0jcb")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+
+[editable path="Hurtbox"]
