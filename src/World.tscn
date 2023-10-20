@@ -257,6 +257,10 @@ position = Vector2(54, 391)
 [node name="Bat" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(299, 380)
 
+[node name="Door2" parent="World 2/YSortNode" instance=ExtResource("11_ny8ph")]
+position = Vector2(-35, 382)
+rotation = 1.5708
+
 [node name="DashAliens" type="Node2D" parent="World 2/YSortNode"]
 y_sort_enabled = true
 position = Vector2(1, -10)
@@ -266,10 +270,6 @@ position = Vector2(3036, 514)
 
 [node name="DashAlien3" parent="World 2/YSortNode/DashAliens" instance=ExtResource("10_sw5wt")]
 position = Vector2(2749, 404)
-
-[node name="Door2" parent="." instance=ExtResource("11_ny8ph")]
-position = Vector2(-1035, 382)
-rotation = 1.5708
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-34, -48)
@@ -290,12 +290,11 @@ scale = Vector2(2.65746, 1.16143)
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource("2_q2csq")]
 
-[node name="DashColdown" parent="CanvasLayer" instance=ExtResource("12_wxu6c")]
+[node name="TransitionCooldown" parent="CanvasLayer" instance=ExtResource("12_wxu6c")]
 offset_left = 1.0
 offset_top = 19.0
 offset_right = 230.0
 offset_bottom = 48.0
-DASH_COOLDOWN_TIME = 0.15
 
 [node name="ArtifactTextBox" parent="CanvasLayer" instance=ExtResource("13_c4d2n")]
 
@@ -338,6 +337,9 @@ blend_mode = 2
 [node name="Editor Light" type="DirectionalLight2D" parent="."]
 editor_only = true
 
+[node name="TransitionCooldownTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]
 [connection signal="player_hit" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
@@ -345,3 +347,4 @@ editor_only = true
 [connection signal="story_done" from="CanvasLayer/HelpTextBox" to="CanvasLayer/HelpController" method="_on_help_text_box_story_done"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="CanvasLayer/Fader" method="_on_animation_finished"]
+[connection signal="timeout" from="TransitionCooldownTimer" to="." method="_on_transition_cooldown_timer_timeout"]

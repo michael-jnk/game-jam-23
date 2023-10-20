@@ -8,8 +8,14 @@ extends Node2D
 @onready var playerController = $PlayerController
 @onready var modulater = $CanvasModulate
 
+@onready var transitionCooldownTimer = $TransitionCooldownTimer
+
+@export var transitionCooldown = 3
+@onready var coolDownController = $CanvasLayer/TransitionCooldown
+
 var enemies_killed = 0 
 var artifacts_found = 0
+var transitionCooldownActive = false
 
 @export var enemiesKillsNeeded = 10
 
@@ -31,12 +37,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	coolDownController.setProgValue((transitionCooldown - transitionCooldownTimer.time_left) * 100 / transitionCooldown)
 	if Input.is_action_just_pressed("change_position"):
+		if transitionCooldownActive:
+			return
 		playerController.currentWorld = currentWorld
 		playerController.player1.onWorld = !playerController.player1.onWorld
 		playerController.player2.onWorld = !playerController.player2.onWorld
 		fader.fade()
 		transitionEffect.play()
+		transitionCooldownTimer.start(transitionCooldown)
+		transitionCooldownActive = true
 			
 			
 
@@ -72,3 +83,7 @@ func artifact_found():
 	artifacts_found += 1
 	if artifacts_found == 4:
 		print("Game Won!")
+
+
+func _on_transition_cooldown_timer_timeout():
+	transitionCooldownActive = false
