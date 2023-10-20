@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxdhr0gju1uvh"]
+
+[ext_resource type="Script" path="res://UI/enemy_ending.gd" id="1_fnadd"]
+[ext_resource type="Texture2D" uid="uid://de8umtfpho437" path="res://UI/ship-zoom-in-draft.png" id="2_r5ajm"]
+[ext_resource type="PackedScene" uid="uid://b5bebuyj5oih1" path="res://UI/text_box.tscn" id="3_h4yiw"]
+[ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="4_s2d37"]
+
+[sub_resource type="Animation" id="Animation_tksul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ckdon"]
+resource_name = "ship_zoom_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6u2hb"]
+_data = {
+"RESET": SubResource("Animation_tksul"),
+"ship_zoom_in": SubResource("Animation_ckdon")
+}
+
+[node name="EnemyEnding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fnadd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(161, 91)
+texture = ExtResource("2_r5ajm")
+hframes = 15
+
+[node name="TextBox" parent="." instance=ExtResource("3_h4yiw")]
+
+[node name="AutoFadeNode" parent="." instance=ExtResource("4_s2d37")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6u2hb")
+}
+
+[connection signal="slide_reached" from="TextBox" to="." method="_on_text_box_slide_reached"]
+[connection signal="story_done" from="TextBox" to="." method="_on_text_box_story_done"]
+[connection signal="animation_done" from="AutoFadeNode" to="." method="_on_auto_fade_node_animation_done"]

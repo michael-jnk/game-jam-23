@@ -9,7 +9,8 @@ extends Node2D
 @onready var modulater = $CanvasModulate
 
 var enemies_killed = 0 
-const enemiesKillsNeeded = 3
+var artifacts_found = 0
+@export var enemiesKillsNeeded = 10
 
 enum {
 	WORLD1,
@@ -63,4 +64,9 @@ func _on_fader_animation_finished(anim_name):
 func enemy_died(isWorld1):
 	enemies_killed += 1
 	if enemies_killed >= enemiesKillsNeeded:
-		print("Done!")
+		get_tree().change_scene_to_file("res://enemy_ending.tscn")
+	
+func artifact_found():
+	artifacts_found += 1
+	if artifacts_found == 4:
+		print("Game Won!")

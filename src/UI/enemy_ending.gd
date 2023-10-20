@@ -3,7 +3,7 @@ extends Control
 
 
 var current_slide = 0
-var story = ["The lives were lost did not make up for the information yet to be found...", "asdlfjas;dklfjas;dlkfjafds", "Press E to start the game."]
+var story = ["The lives were lost did not make up for the information yet to be found...", "asdlfjas;dklfjas;dlkfjafds", "Make sure that you are more careful next time."]
 
 
 
@@ -40,4 +40,4 @@ func _on_text_box_slide_reached(slideNumber):
 
 
 func _on_text_box_story_done():
-	get_tree().change_scene_to_file("res://World.tscn")
+	get_tree().change_scene_to_file("res://StartScreen.tscn")
