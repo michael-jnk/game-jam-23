@@ -12,8 +12,7 @@ func _ready():
 func _process(delta):
 	pass
 
-const help_messages = [["Welcome to your new home."], [], [], [],
- ["You will also have to fight enemies in the past. Press E to change dimensions. "]]
+const help_messages = [["Welcome to the STAR47."], ["Press Shift to dash and Space to attack."], ["You will encounter enemies across this journey."],["You will also have to fight enemies in the past. Press E to change dimensions."]]
 
 
 func _on_help_node_help_required(helpNumber):

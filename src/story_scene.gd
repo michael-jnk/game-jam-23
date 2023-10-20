@@ -3,7 +3,7 @@ extends Control
 
 
 var current_slide = 0
-var story = ["The lives were lost did not make up for the information yet to be found...", "asdlfjas;dklfjas;dlkfjafds", "Press E to start the game."]
+var story = ["You wake up on the new side.", "asdlfjas;dklfjas;dlkfjafds", "Press Enter to start the game."]
 
 
 

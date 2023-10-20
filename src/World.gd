@@ -10,6 +10,7 @@ extends Node2D
 
 var enemies_killed = 0 
 var artifacts_found = 0
+
 @export var enemiesKillsNeeded = 10
 
 enum {

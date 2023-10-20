@@ -25,7 +25,11 @@ signal slide_reached(slideNumber)
 
 
 func render_story(renderedStory):
+	label.clear()
 	story = renderedStory
+	current_story_index = 0
+	current_slide = 0
+	
 	isReady = true
 	
 	

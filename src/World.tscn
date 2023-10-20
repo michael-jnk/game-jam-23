@@ -79,7 +79,6 @@ _data = {
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gq7kl")
-enemiesKillsNeeded = 1
 
 [node name="World 1" type="Node2D" parent="."]
 
@@ -181,16 +180,18 @@ position = Vector2(1679, 383)
 
 [node name="HelpNode2" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
 position = Vector2(2182, 210)
+helpNumber = 1
 
 [node name="HelpNode" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
 position = Vector2(2181, 302)
 
 [node name="HelpNode3" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
 position = Vector2(2036, 333)
+helpNumber = 2
 
 [node name="HelpNode5" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
 position = Vector2(2161, 444)
-helpNumber = 4
+helpNumber = 3
 
 [node name="Artifact" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_8s6an")]
 position = Vector2(2177, 376)
