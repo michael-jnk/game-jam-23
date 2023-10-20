@@ -24,7 +24,7 @@ func start_preparing(player):
 	prepTimer.start(chargePrepTime)
 	dashing = false
 	chargeDone = true
-	print("start preparing")
+#	print("start preparing")
 
 func prepare():
 	if (prepTimer.time_left > turnGrace):
@@ -36,7 +36,7 @@ func _on_timer_timeout():
 	dashTimer.start(chargeTime)
 	dashing = true
 	chargeDone = false
-	print("prep timer done!")
+#	print("prep timer done!")
 
 #	print("timer done!")
 #	if !dashing:
@@ -58,7 +58,7 @@ func _on_timer_timeout():
 func _on_cooldown_timer_timeout():
 	cooldown_done.emit()
 	chargeDone = true
-	print("cooldown timer done")
+#	print("cooldown timer done")
 
 
 func _on_dash_timer_timeout():
@@ -66,4 +66,4 @@ func _on_dash_timer_timeout():
 	cooldownTimer.start(cooldownTime)
 	chargeDone = true
 	dashing = false
-	print("cooldown timer started")
+#	print("cooldown timer started")

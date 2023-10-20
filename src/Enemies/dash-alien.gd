@@ -34,7 +34,7 @@ const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
 @onready var chargeParticles = $ChargeParticles
 
 func _physics_process(delta):
-	print(state)
+#	print(state)
 	match state:
 		IDLE:
 			knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
@@ -141,7 +141,7 @@ func _on_charge_controller_charge_prep_done(targetVector):
 
 func _on_charge_controller_charge_done():
 	if state == CHARGE:
-		print("charge timer done - set cooldown")
+#		print("charge timer done - set cooldown")
 		state = COOLDOWN
 		hitbox.knockback_strength = 100
 
