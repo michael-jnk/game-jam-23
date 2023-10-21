@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=32 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
@@ -13,11 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://ve7u2xd0x784" path="res://Enemies/dash-alien.tscn" id="10_sw5wt"]
 [ext_resource type="PackedScene" uid="uid://v7m2xcfs13u4" path="res://World/ship_map.tscn" id="10_uuwue"]
 [ext_resource type="Script" path="res://PlayerController.gd" id="11_ae5qn"]
+[ext_resource type="Texture2D" uid="uid://dnh5unqr3ld3o" path="res://Artifacts/bracelet-artefact.png" id="11_bmgje"]
+[ext_resource type="Texture2D" uid="uid://t7aahp6vj36j" path="res://Artifacts/book-artefact-REAL.png" id="11_meoxd"]
 [ext_resource type="Script" path="res://UI/Fader.gd" id="11_svbhb"]
 [ext_resource type="PackedScene" uid="uid://cugpbasgcliap" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
 [ext_resource type="AudioStream" uid="uid://d4ii20unmpcya" path="res://Music and Sounds/Music.mp3" id="13_0g61i"]
 [ext_resource type="Script" path="res://UI/ArtifactController.gd" id="13_8kd3m"]
 [ext_resource type="PackedScene" uid="uid://b5bebuyj5oih1" path="res://UI/text_box.tscn" id="13_c4d2n"]
+[ext_resource type="Texture2D" uid="uid://cx2eoh7raoh4" path="res://Artifacts/skibur-cube-artifact.png" id="13_dtddb"]
+[ext_resource type="Texture2D" uid="uid://cbo3n60ejy0dj" path="res://Artifacts/key-artifact.png" id="13_wqeef"]
 [ext_resource type="AudioStream" uid="uid://biswkf0bmk5tl" path="res://Music and Sounds/TransitionPlaceholder2.mp3" id="14_gdhli"]
 [ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="16_qauxw"]
 [ext_resource type="PackedScene" uid="uid://m160lv3fj4xv" path="res://artifact_ui.tscn" id="17_mksqf"]
@@ -195,8 +199,18 @@ helpNumber = 2
 position = Vector2(2161, 444)
 helpNumber = 3
 
-[node name="Artifact" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_8s6an")]
-position = Vector2(2177, 376)
+[node name="Artifact1" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_8s6an")]
+position = Vector2(612, -156)
+artifactNumber = 1
+
+[node name="Sprite2D" parent="World 1/YSortNode/InteractionObjects/Artifact1" index="0"]
+texture = ExtResource("11_bmgje")
+
+[node name="Artifact0" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_8s6an")]
+position = Vector2(1749, 341)
+
+[node name="Sprite2D" parent="World 1/YSortNode/InteractionObjects/Artifact0" index="0"]
+texture = ExtResource("11_meoxd")
 
 [node name="World 2" type="Node2D" parent="."]
 position = Vector2(-1000, 2.08165e-12)
@@ -253,12 +267,29 @@ position = Vector2(54, 391)
 [node name="Bat" parent="World 2/YSortNode/Bats" instance=ExtResource("4_tkaki")]
 position = Vector2(299, 380)
 
+[node name="InteractionObjects" type="Node2D" parent="World 2/YSortNode"]
+position = Vector2(1, -10)
+
+[node name="Artifact2" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("10_8s6an")]
+position = Vector2(-492, 1058)
+artifactNumber = 2
+
+[node name="Sprite2D" parent="World 2/YSortNode/InteractionObjects/Artifact2" index="0"]
+texture = ExtResource("13_dtddb")
+
+[node name="Artifact3" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("10_8s6an")]
+position = Vector2(-1920, 390)
+artifactNumber = 3
+
+[node name="Sprite2D" parent="World 2/YSortNode/InteractionObjects/Artifact3" index="0"]
+texture = ExtResource("13_wqeef")
+
 [node name="DashAliens" type="Node2D" parent="World 2/YSortNode"]
 y_sort_enabled = true
 position = Vector2(1, -10)
 
 [node name="DashAlien2" parent="World 2/YSortNode/DashAliens" instance=ExtResource("10_sw5wt")]
-position = Vector2(3036, 514)
+position = Vector2(3062, 553)
 
 [node name="DashAlien3" parent="World 2/YSortNode/DashAliens" instance=ExtResource("10_sw5wt")]
 position = Vector2(2749, 404)
@@ -312,7 +343,6 @@ scale = Vector2(1.5, 1.5)
 color = Color(0, 0, 0, 0)
 
 [node name="AutoFadeNode" parent="CanvasLayer" instance=ExtResource("16_qauxw")]
-visible = false
 
 [node name="Fader" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -350,3 +380,12 @@ one_shot = true
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="CanvasLayer/Fader" method="_on_animation_finished"]
 [connection signal="timeout" from="TransitionCooldownTimer" to="." method="_on_transition_cooldown_timer_timeout"]
+
+[editable path="World 1/YSortNode/InteractionObjects/Artifact1"]
+[editable path="World 1/YSortNode/InteractionObjects/Artifact1/Hurtbox"]
+[editable path="World 1/YSortNode/InteractionObjects/Artifact0"]
+[editable path="World 1/YSortNode/InteractionObjects/Artifact0/Hurtbox"]
+[editable path="World 2/YSortNode/InteractionObjects/Artifact2"]
+[editable path="World 2/YSortNode/InteractionObjects/Artifact2/Hurtbox"]
+[editable path="World 2/YSortNode/InteractionObjects/Artifact3"]
+[editable path="World 2/YSortNode/InteractionObjects/Artifact3/Hurtbox"]

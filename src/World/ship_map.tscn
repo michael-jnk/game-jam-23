@@ -1040,8 +1040,31 @@ layer_0/tile_data = PackedInt32Array(-393234, 131074, 3, -393235, 65538, 3, -393
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="LightOnSight" parent="Lights" instance=ExtResource("3_2fsvw")]
-visible = false
-position = Vector2(-689.14, -141.539)
+position = Vector2(-1206.45, -147.277)
+
+[node name="LightOnSight8" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2202.37, -403.577)
+
+[node name="LightOnSight9" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2325.62, -407.402)
+
+[node name="LightOnSight10" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2451.58, -401.664)
+
+[node name="LightOnSight11" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2454.27, -656.051)
+
+[node name="LightOnSight12" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2320.23, -660.833)
+
+[node name="LightOnSight13" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2196.07, -664.658)
+
+[node name="LightOnSight14" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-1974.76, -533.639)
+
+[node name="LightOnSight15" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-1974.76, -533.639)
 
 [node name="LightOnSight7" parent="Lights" instance=ExtResource("3_2fsvw")]
 visible = false

@@ -5,7 +5,10 @@ var artifacts_found = 0
 @onready var artifactUI = $"../ArtifactUI"
 @onready var artifactTextBox = $"../ArtifactTextBox"
 
-const artifact_texts = [["ASDFKLASDJFLKAJSFd"], ["asdlkfj;as;ldkfja;lskdfj"], ["asdlf;kjasd;lfjk"]]
+const artifact_texts = [["A book from the past. It is titled \" Why I killed your mother\". It has \"Help me\" written on the front."],
+ ["asdlkfj;as;ldkfja;lskdfj"], 
+["asdlf;kjasd;lfjk"],
+["asdfl;kjasdf;lkjadsfa"]]
 
 func _ready():
 	artifactTextBox.visible = false

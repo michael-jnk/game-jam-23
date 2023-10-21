@@ -84,7 +84,7 @@ shape = SubResource("CapsuleShape2D_fdbqx")
 sprite_frames = SubResource("SpriteFrames_d4j1t")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.107469
+frame_progress = 0.0592415
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(1, 7)
