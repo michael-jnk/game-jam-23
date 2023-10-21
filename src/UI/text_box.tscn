@@ -43,6 +43,7 @@ offset_left = 41.0
 offset_top = 112.0
 offset_right = 53.0
 offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("2_8ehej")
 text = "*"
 
 [node name="Done Label" type="Label" parent="."]
@@ -51,6 +52,7 @@ offset_left = 273.0
 offset_top = 134.0
 offset_right = 285.0
 offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_8ehej")
 
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1faam")

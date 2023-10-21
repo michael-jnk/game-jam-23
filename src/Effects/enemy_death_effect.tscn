@@ -88,6 +88,8 @@ script = ExtResource("1_rgp0m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iqumx")
 autoplay = "default"
+frame = 9
+frame_progress = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_henwu")
