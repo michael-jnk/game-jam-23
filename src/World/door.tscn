@@ -260,10 +260,10 @@ tracks/1/path = NodePath("AnimatableBody2D/Left:shape:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(16, 32), Vector2(12, 32), Vector2(8, 32), Vector2(4, 32), Vector2(1, 32), Vector2(0, 32)]
+"values": [Vector2(16, 32), Vector2(12, 32), Vector2(8, 32), Vector2(4, 32), Vector2(1, 32)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -284,10 +284,10 @@ tracks/3/path = NodePath("AnimatableBody2D/Right:shape:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(16, 32), Vector2(13, 32), Vector2(9, 32), Vector2(5, 32), Vector2(1, 32), Vector2(0, 32)]
+"values": [Vector2(16, 32), Vector2(13, 32), Vector2(9, 32), Vector2(5, 32), Vector2(1, 32)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -332,10 +332,10 @@ tracks/7/path = NodePath("AnimatableBody2D/LeftOccluder:occluder:polygon")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [PackedVector2Array(-16, -16, -16, 16, 0, 16, 0, -16), PackedVector2Array(-16, -16, -16, 16, -4, 16, -4, -16), PackedVector2Array(-16, -16, -16, 16, -8, 16, -8, -16), PackedVector2Array(-16, -16, -16, 16, -12, 16, -12, -16), PackedVector2Array(-16, -16, -16, 16, -15, 16, -15, -16), PackedVector2Array()]
+"values": [PackedVector2Array(-16, -16, -16, 16, 0, 16, 0, -16), PackedVector2Array(-16, -16, -16, 16, -4, 16, -4, -16), PackedVector2Array(-16, -16, -16, 16, -8, 16, -8, -16), PackedVector2Array(-16, -16, -16, 16, -12, 16, -12, -16), PackedVector2Array(-16, -16, -16, 16, -15, 16, -15, -16)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -344,10 +344,10 @@ tracks/8/path = NodePath("AnimatableBody2D/RightOccluder:occluder:polygon")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [PackedVector2Array(16, -16, 16, 16, 0, 16, 0, -16), PackedVector2Array(16, -16, 16, 16, 3, 16, 3, -16), PackedVector2Array(16, -16, 16, 16, 7, 16, 7, -16), PackedVector2Array(16, -16, 16, 16, 11, 16, 11, -16), PackedVector2Array(16, -16, 16, 16, 15, 16, 15, -16), PackedVector2Array()]
+"values": [PackedVector2Array(16, -16, 16, 16, 0, 16, 0, -16), PackedVector2Array(16, -16, 16, 16, 3, 16, 3, -16), PackedVector2Array(16, -16, 16, 16, 7, 16, 7, -16), PackedVector2Array(16, -16, 16, 16, 11, 16, 11, -16), PackedVector2Array(16, -16, 16, 16, 15, 16, 15, -16)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
