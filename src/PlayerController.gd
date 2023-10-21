@@ -48,4 +48,6 @@ func _on_player_player_hit(world):
 		get_tree().change_scene_to_file("res://death_scene.tscn")
 
 
-	
+func restore_health(health_restored):
+	health = min(max_health, health + health_restored)
+	health_changed.emit(health)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=33 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cx2eoh7raoh4" path="res://Artifacts/skibur-cube-artifact.png" id="13_dtddb"]
 [ext_resource type="Texture2D" uid="uid://cbo3n60ejy0dj" path="res://Artifacts/key-artifact.png" id="13_wqeef"]
 [ext_resource type="AudioStream" uid="uid://biswkf0bmk5tl" path="res://Music and Sounds/TransitionPlaceholder2.mp3" id="14_gdhli"]
+[ext_resource type="PackedScene" uid="uid://bbo6fc8recb4k" path="res://World/heart_object.tscn" id="16_e5rg0"]
 [ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="16_qauxw"]
 [ext_resource type="PackedScene" uid="uid://6nfrd5kr6sjg" path="res://Enemies/spider-alien.tscn" id="16_v5pr6"]
 [ext_resource type="PackedScene" uid="uid://m160lv3fj4xv" path="res://artifact_ui.tscn" id="17_mksqf"]
@@ -261,6 +262,15 @@ position = Vector2(1749, 341)
 [node name="Sprite2D" parent="World 1/YSortNode/InteractionObjects/Artifact0" index="0"]
 texture = ExtResource("11_meoxd")
 
+[node name="HeartFiller" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(475, 876)
+
+[node name="HeartFiller2" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(509, -146)
+
+[node name="HeartFiller3" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(1492, 1039)
+
 [node name="World 2" type="Node2D" parent="."]
 position = Vector2(-1000, 2.08165e-12)
 
@@ -308,58 +318,61 @@ y_sort_enabled = true
 [node name="Trees" type="Node2D" parent="World 2/YSortNode"]
 y_sort_enabled = true
 
-[node name="Bats" type="Node2D" parent="World 2/YSortNode"]
+[node name="BigEnemies" type="Node2D" parent="World 2/YSortNode"]
 
-[node name="BigEnemy" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1535, 334)
 
-[node name="BigEnemy2" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy2" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1417, 423)
 
-[node name="BigEnemy3" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy3" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1247, -130)
 
-[node name="BigEnemy4" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy4" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1381, 83)
 
-[node name="BigEnemy5" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy5" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1108, 81)
 
-[node name="BigEnemy6" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy6" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-940, -123)
 
-[node name="BigEnemy7" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy7" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-935, 63)
 
-[node name="BigEnemy8" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy8" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-559, -77)
 
-[node name="BigEnemy9" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy9" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-541, 760)
 
-[node name="BigEnemy10" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy10" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-364, 1040)
 
-[node name="BigEnemy11" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy11" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-745, 523)
 
-[node name="BigEnemy12" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy12" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-409, 252)
 
-[node name="BigEnemy13" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy13" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1502, 818)
 
-[node name="BigEnemy14" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy14" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1295, 924)
 
-[node name="BigEnemy15" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy15" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1179, 1140)
 
-[node name="BigEnemy16" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy16" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1190, 699)
 
-[node name="BigEnemy17" parent="World 2/YSortNode/Bats" instance=ExtResource("12_vwcku")]
+[node name="BigEnemy17" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-208, 18)
+
+[node name="BigEnemy18" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
+position = Vector2(359, 404)
 
 [node name="InteractionObjects" type="Node2D" parent="World 2/YSortNode"]
 position = Vector2(1, -10)
@@ -377,6 +390,15 @@ artifactNumber = 3
 
 [node name="Sprite2D" parent="World 2/YSortNode/InteractionObjects/Artifact3" index="0"]
 texture = ExtResource("13_wqeef")
+
+[node name="HeartFiller" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(5, 350)
+
+[node name="HeartFiller2" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(-1599, 796)
+
+[node name="HeartFiller3" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(-899, 792)
 
 [node name="DashAliens" type="Node2D" parent="World 2/YSortNode"]
 y_sort_enabled = true
@@ -459,6 +481,9 @@ editor_only = true
 
 [node name="TransitionCooldownTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="BigEnemy" parent="." instance=ExtResource("12_vwcku")]
+position = Vector2(-994, 402)
 
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]
