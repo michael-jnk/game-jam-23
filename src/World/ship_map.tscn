@@ -1,9 +1,10 @@
-[gd_scene load_steps=57 format=3 uid="uid://v7m2xcfs13u4"]
+[gd_scene load_steps=58 format=3 uid="uid://v7m2xcfs13u4"]
 
 [ext_resource type="Texture2D" uid="uid://bjqk1jsp1tyk4" path="res://World/CliffTileset.png" id="1_hm3e8"]
 [ext_resource type="Texture2D" uid="uid://c3fpg566btnjg" path="res://World/DirtTileset.png" id="2_yl5wk"]
 [ext_resource type="PackedScene" uid="uid://uyjqvmojkv3o" path="res://World/light_on_sight.tscn" id="3_2fsvw"]
 [ext_resource type="PackedScene" uid="uid://dki01f67ijqwf" path="res://World/door.tscn" id="4_nidnr"]
+[ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="6_edtd0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1l3m"]
 texture = ExtResource("2_yl5wk")
@@ -1144,3 +1145,17 @@ rotation = 1.5708
 [node name="Door15" parent="Doors" instance=ExtResource("4_nidnr")]
 position = Vector2(-2319.43, -141.5)
 rotation = 1.5708
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Tree" parent="Objects" instance=ExtResource("6_edtd0")]
+position = Vector2(-1517.73, 380.625)
+
+[node name="Tree2" parent="Objects" instance=ExtResource("6_edtd0")]
+position = Vector2(-1488.94, 380.625)
+
+[node name="Tree3" parent="Objects" instance=ExtResource("6_edtd0")]
+position = Vector2(-1459.25, 380.625)
+
+[node name="Tree4" parent="Objects" instance=ExtResource("6_edtd0")]
+position = Vector2(-1459.25, 380.625)

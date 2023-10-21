@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyutcrdixfukr"]
 
-[ext_resource type="Texture2D" uid="uid://diydkccv5aqe2" path="res://World/Tree.png" id="1_yeu50"]
+[ext_resource type="Texture2D" uid="uid://3ojamfjof3lr" path="res://World/Screenshot 2023-10-21 at 2.20.28 PM.png" id="1_47uhp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogg6d"]
 
@@ -9,10 +9,12 @@ collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_yeu50")
+position = Vector2(0.234375, 2)
+scale = Vector2(0.476311, 0.453125)
+texture = ExtResource("1_47uhp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
+position = Vector2(2.72961e-12, 10)
 rotation = 1.5708
 scale = Vector2(1.08192, 1.00696)
 shape = SubResource("CapsuleShape2D_ogg6d")

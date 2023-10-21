@@ -375,6 +375,7 @@ one_shot = true
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]
 [connection signal="player_hit" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
+[connection signal="artifact_condition_met" from="CanvasLayer/ArtifactController" to="." method="_on_artifact_controller_artifact_condition_met"]
 [connection signal="story_done" from="CanvasLayer/ArtifactTextBox" to="CanvasLayer/ArtifactController" method="_on_artifact_text_box_story_done"]
 [connection signal="story_done" from="CanvasLayer/HelpTextBox" to="CanvasLayer/HelpController" method="_on_help_text_box_story_done"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]

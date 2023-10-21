@@ -86,11 +86,11 @@ func enemy_died(isWorld1):
 	if enemies_killed >= enemiesKillsNeeded:
 		get_tree().change_scene_to_file("res://enemy_ending.tscn")
 	
-func artifact_found():
-	artifacts_found += 1
-	if artifacts_found == 4:
-		print("Game Won!")
 
 
 func _on_transition_cooldown_timer_timeout():
 	transitionCooldownActive = false
+
+
+func _on_artifact_controller_artifact_condition_met():
+	get_tree().change_scene_to_file("res://artifact_ending.tscn")
