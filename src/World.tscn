@@ -236,7 +236,7 @@ y_sort_enabled = true
 [node name="Camera2D" type="Camera2D" parent="World 2/YSortNode"]
 position = Vector2(511, 367)
 limit_left = -3008
-limit_top = -48
+limit_top = -320
 limit_right = -304
 limit_bottom = 1184
 position_smoothing_enabled = true
