@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var knockback = Vector2.ZERO
-var health = 3
+@export var health = 3
 var state = IDLE
 var MAX_SPEED = 80
 

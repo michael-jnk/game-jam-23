@@ -12,6 +12,10 @@ extends Node2D
 
 @export var transitionCooldown = 3
 @onready var coolDownController = $CanvasLayer/TransitionCooldown
+@onready var yearLabel = $CanvasLayer/YearLabel
+
+const pastYear = "2020"
+const presentYear = "3000"
 
 var enemies_killed = 0 
 var artifacts_found = 0
@@ -32,6 +36,7 @@ func _ready():
 	playerController.player1.onWorld = currentWorld == WORLD1
 	playerController.player2.onWorld = currentWorld == WORLD2
 	modulater.visible = currentWorld == WORLD1
+	yearLabel.text = presentYear
 
 			
 
@@ -57,6 +62,7 @@ func _on_fader_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
 #		print("hello!")
 		if currentWorld == WORLD1:
+			yearLabel.text = presentYear
 			modulater.visible = false
 			camera2.position_smoothing_enabled = false
 			camera1.enabled = false
@@ -65,6 +71,7 @@ func _on_fader_animation_finished(anim_name):
 			currentWorld = WORLD2
 			playerController.currentWorld = WORLD2
 		elif currentWorld == WORLD2:
+			yearLabel.text = pastYear
 			modulater.visible = true
 			camera1.position_smoothing_enabled = false
 			camera2.enabled = false

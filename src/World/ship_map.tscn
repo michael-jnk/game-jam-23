@@ -1040,24 +1040,31 @@ layer_0/tile_data = PackedInt32Array(-393234, 131074, 3, -393235, 65538, 3, -393
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="LightOnSight" parent="Lights" instance=ExtResource("3_2fsvw")]
+visible = false
 position = Vector2(-689.14, -141.539)
 
 [node name="LightOnSight7" parent="Lights" instance=ExtResource("3_2fsvw")]
+visible = false
 position = Vector2(-726.026, -244.824)
 
 [node name="LightOnSight2" parent="Lights" instance=ExtResource("3_2fsvw")]
+visible = false
 position = Vector2(-785.404, -310.811)
 
 [node name="LightOnSight3" parent="Lights" instance=ExtResource("3_2fsvw")]
+visible = false
 position = Vector2(-919.453, -200.832)
 
 [node name="LightOnSight4" parent="Lights" instance=ExtResource("3_2fsvw")]
+visible = false
 position = Vector2(-855.577, -138.67)
 
 [node name="LightOnSight5" parent="Lights" instance=ExtResource("3_2fsvw")]
+visible = false
 position = Vector2(-789.902, -79.3765)
 
 [node name="LightOnSight6" parent="Lights" instance=ExtResource("3_2fsvw")]
+visible = false
 position = Vector2(-842.982, 7.65073)
 
 [node name="Doors" type="Node2D" parent="."]

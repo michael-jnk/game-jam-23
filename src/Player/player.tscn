@@ -1363,11 +1363,14 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PremonitionDetectionZone"]
 shape = SubResource("CircleShape2D_aj2fy")
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(2.815, 2.815)
-energy = 0.8
+color = Color(1, 0.956863, 0.854902, 1)
+energy = 0.5
 blend_mode = 2
-shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 3.2
 texture = SubResource("GradientTexture2D_mwmuj")
