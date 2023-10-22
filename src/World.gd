@@ -15,8 +15,13 @@ extends Node2D
 @onready var yearLabel = $CanvasLayer/YearLabel
 @onready var fadeOutNode = $CanvasLayer/FadeOutNode
 
+@onready var musicPlayer1 = $"Music Player"
+@onready var musicPlayer2 = $"Music Player2"
+@onready var borderEffect = $CanvasLayer/BorderEffect
+
 const pastYear = "2020"
 const presentYear = "3000"
+const SILENT_DB = -80
 
 var enemies_killed = 0 
 var artifacts_found = 0
@@ -47,6 +52,7 @@ func _ready():
 	modulater.visible = currentWorld == WORLD1
 	yearLabel.text = presentYear
 	fadeOutNode.visible = false
+	borderEffect.visible = false
 
 			
 
@@ -72,20 +78,28 @@ func _on_fader_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
 #		print("hello!")
 		if currentWorld == WORLD1:
+			borderEffect.visible = false
 			yearLabel.text = presentYear
 			modulater.visible = false
 			camera2.position_smoothing_enabled = false
 			camera1.enabled = false
 			camera2.enabled = true
+#			musicPlayer1.volume_db = SILENT_DB
+#			musicPlayer2.volume_db = 0
+			musicPlayer1.pitch_scale = 1
 			camera2.position_smoothing_enabled = true
 			currentWorld = WORLD2
 			playerController.currentWorld = WORLD2
 		elif currentWorld == WORLD2:
+			borderEffect.visible = true
 			yearLabel.text = pastYear
 			modulater.visible = true
 			camera1.position_smoothing_enabled = false
 			camera2.enabled = false
 			camera1.enabled = true
+#			musicPlayer2.volume_db = SILENT_DB
+#			musicPlayer1.volume_db = 0
+			musicPlayer1.pitch_scale = .7
 			camera2.position_smoothing_enabled = true
 			currentWorld = WORLD1
 			playerController.currentWorld = WORLD1
