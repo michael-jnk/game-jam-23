@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=42 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cx2eoh7raoh4" path="res://Artifacts/skibur-cube-artifact.png" id="13_dtddb"]
 [ext_resource type="Texture2D" uid="uid://cbo3n60ejy0dj" path="res://Artifacts/key-artifact.png" id="13_wqeef"]
 [ext_resource type="AudioStream" uid="uid://biswkf0bmk5tl" path="res://Music and Sounds/TransitionPlaceholder2.mp3" id="14_gdhli"]
+[ext_resource type="PackedScene" uid="uid://cdq36doa1r43k" path="res://World/note.tscn" id="15_76oud"]
 [ext_resource type="PackedScene" uid="uid://dg2j0ha524gkk" path="res://World/corpse.tscn" id="15_xcdqr"]
 [ext_resource type="PackedScene" uid="uid://bbo6fc8recb4k" path="res://World/heart_object.tscn" id="16_e5rg0"]
 [ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="16_qauxw"]
@@ -30,7 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://m160lv3fj4xv" path="res://artifact_ui.tscn" id="17_mksqf"]
 [ext_resource type="Script" path="res://UI/HelpController.gd" id="19_y5dgo"]
 [ext_resource type="FontFile" uid="uid://lsf5abucrjjv" path="res://Other Asets/Spectral-Light.ttf" id="20_24mr3"]
+[ext_resource type="Script" path="res://NoteController.gd" id="22_1pqux"]
 [ext_resource type="PackedScene" uid="uid://cgdroksyhyohl" path="res://UI/fade_out_node.tscn" id="26_28rpo"]
+[ext_resource type="PackedScene" uid="uid://c3lli4lbrfixo" path="res://note_ui.tscn" id="27_u6akg"]
 [ext_resource type="AudioStream" uid="uid://cu6n0rggswf23" path="res://Music and Sounds/game_jam.wav" id="29_wmc50"]
 
 [sub_resource type="Gradient" id="Gradient_thsb7"]
@@ -248,6 +251,12 @@ position = Vector2(163, 304)
 [node name="SpiderAlien21" parent="World 1/YSortNode/DashAliens" instance=ExtResource("16_v5pr6")]
 position = Vector2(237, 406)
 
+[node name="SpiderAlien22" parent="World 1/YSortNode/DashAliens" instance=ExtResource("16_v5pr6")]
+position = Vector2(380, 324)
+
+[node name="SpiderAlien23" parent="World 1/YSortNode/DashAliens" instance=ExtResource("16_v5pr6")]
+position = Vector2(106, 308)
+
 [node name="InteractionObjects" type="Node2D" parent="World 1/YSortNode"]
 
 [node name="HelpNode4" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
@@ -292,6 +301,20 @@ position = Vector2(1492, 1039)
 
 [node name="HeartFiller4" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
 position = Vector2(1188, 777)
+
+[node name="HeartFiller5" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(566, 377)
+
+[node name="Note" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("15_76oud")]
+position = Vector2(1752, 410)
+
+[node name="Note2" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("15_76oud")]
+position = Vector2(860, 778)
+artifactNumber = 2
+
+[node name="Note3" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("15_76oud")]
+position = Vector2(1679, 858)
+artifactNumber = 1
 
 [node name="Corpses" type="Node2D" parent="World 1/YSortNode"]
 y_sort_enabled = true
@@ -492,6 +515,14 @@ position = Vector2(-1599, 796)
 [node name="HeartFiller3" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
 position = Vector2(-899, 792)
 
+[node name="Note" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("15_76oud")]
+position = Vector2(-1844, 348)
+artifactNumber = 4
+
+[node name="Note2" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("15_76oud")]
+position = Vector2(-1391, -123)
+artifactNumber = 3
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 light_mask = 2
 position = Vector2(-34, -48)
@@ -504,6 +535,9 @@ script = ExtResource("19_y5dgo")
 
 [node name="ArtifactController" type="Node" parent="CanvasLayer"]
 script = ExtResource("13_8kd3m")
+
+[node name="NoteController" type="Node" parent="CanvasLayer"]
+script = ExtResource("22_1pqux")
 
 [node name="BorderEffect" type="TextureRect" parent="CanvasLayer"]
 offset_right = 121.0
@@ -536,6 +570,12 @@ theme_override_fonts/font = ExtResource("20_24mr3")
 theme_override_font_sizes/font_size = 13
 text = "2028"
 
+[node name="NoteUI" parent="CanvasLayer" instance=ExtResource("27_u6akg")]
+offset_left = 2.0
+offset_top = 52.0
+offset_right = 42.0
+offset_bottom = 92.0
+
 [node name="TransitionScreen" type="ColorRect" parent="CanvasLayer"]
 offset_right = 320.0
 offset_bottom = 179.0
@@ -543,6 +583,7 @@ scale = Vector2(1.5, 1.5)
 color = Color(0, 0, 0, 0)
 
 [node name="AutoFadeNode" parent="CanvasLayer" instance=ExtResource("16_qauxw")]
+visible = false
 
 [node name="Fader" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -551,6 +592,7 @@ libraries = {
 script = ExtResource("11_svbhb")
 
 [node name="FadeOutNode" parent="CanvasLayer" instance=ExtResource("26_28rpo")]
+visible = false
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("11_ae5qn")
@@ -583,6 +625,7 @@ one_shot = true
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]
 [connection signal="player_hit" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="artifact_condition_met" from="CanvasLayer/ArtifactController" to="." method="_on_artifact_controller_artifact_condition_met"]
+[connection signal="artifact_condition_met" from="CanvasLayer/NoteController" to="." method="_on_artifact_controller_artifact_condition_met"]
 [connection signal="story_done" from="CanvasLayer/ArtifactTextBox" to="CanvasLayer/ArtifactController" method="_on_artifact_text_box_story_done"]
 [connection signal="story_done" from="CanvasLayer/HelpTextBox" to="CanvasLayer/HelpController" method="_on_help_text_box_story_done"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]
