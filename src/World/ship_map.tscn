@@ -1,12 +1,12 @@
 [gd_scene load_steps=63 format=3 uid="uid://v7m2xcfs13u4"]
 
-[ext_resource type="Texture2D" uid="uid://bjqk1jsp1tyk4" path="res://World/CliffTileset.png" id="1_hm3e8"]
 [ext_resource type="Shader" path="res://World/ship_map.gdshader" id="1_rkbds"]
 [ext_resource type="Script" path="res://World/ship_map.gd" id="1_y772o"]
 [ext_resource type="Texture2D" uid="uid://bkin5ifxstsha" path="res://World/Tileset_floor.png" id="2_7sfta"]
 [ext_resource type="Texture2D" uid="uid://c3fpg566btnjg" path="res://World/DirtTileset.png" id="2_yl5wk"]
 [ext_resource type="PackedScene" uid="uid://uyjqvmojkv3o" path="res://World/light_on_sight.tscn" id="3_2fsvw"]
 [ext_resource type="PackedScene" uid="uid://dki01f67ijqwf" path="res://World/door.tscn" id="4_nidnr"]
+[ext_resource type="Texture2D" uid="uid://3tuf0npeferg" path="res://World/Spaceship Tileset.png" id="5_lfy0l"]
 [ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="6_edtd0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bb4op"]
