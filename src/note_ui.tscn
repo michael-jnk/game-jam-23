@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3lli4lbrfixo"]
+
+[ext_resource type="Script" path="res://note_ui.gd" id="1_bdkn7"]
+[ext_resource type="Texture2D" uid="uid://cqaa8ur2vcdwd" path="res://World/note-sprite-export-sheet-REALANDTRUE.png" id="2_pekyg"]
+
+[node name="NoteUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bdkn7")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 0
+offset_right = 164.0
+offset_bottom = 32.0
+
+[node name="Artifact1" type="TextureRect" parent="HSplitContainer"]
+layout_mode = 2
+texture = ExtResource("2_pekyg")
+stretch_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Artifact2" type="TextureRect" parent="HSplitContainer/HSplitContainer"]
+layout_mode = 2
+texture = ExtResource("2_pekyg")
+stretch_mode = 2
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Artifact3" type="TextureRect" parent="HSplitContainer/HSplitContainer/HSplitContainer2"]
+layout_mode = 2
+texture = ExtResource("2_pekyg")
+stretch_mode = 2
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="HSplitContainer/HSplitContainer/HSplitContainer2"]
+layout_mode = 2
+
+[node name="Artifact4" type="TextureRect" parent="HSplitContainer/HSplitContainer/HSplitContainer2/HSplitContainer3"]
+layout_mode = 2
+texture = ExtResource("2_pekyg")
+stretch_mode = 2
+
+[node name="Artifact5" type="TextureRect" parent="HSplitContainer/HSplitContainer/HSplitContainer2/HSplitContainer3"]
+layout_mode = 2
+texture = ExtResource("2_pekyg")
+stretch_mode = 2
