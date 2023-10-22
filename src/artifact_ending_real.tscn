@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2g7mtwa4ab0e"]
+
+[ext_resource type="Script" path="res://UI/enemy_ending.gd" id="1_vfedr"]
+[ext_resource type="Texture2D" uid="uid://vn82eawevnu2" path="res://good-ending-escape-message.png" id="2_i8ilg"]
+[ext_resource type="Texture2D" uid="uid://dxy1mod13vm03" path="res://good-ending-animation-REAL.png" id="3_7h5cb"]
+[ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="4_r55rc"]
+[ext_resource type="PackedScene" uid="uid://cgdroksyhyohl" path="res://UI/fade_out_node.tscn" id="5_cx8g7"]
+[ext_resource type="AudioStream" uid="uid://cu6n0rggswf23" path="res://Music and Sounds/game_jam.wav" id="6_y3ksa"]
+
+[sub_resource type="Animation" id="Animation_tksul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ckdon"]
+resource_name = "ship_zoom_in"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+}
+
+[sub_resource type="Animation" id="Animation_coo62"]
+resource_name = "ship_zoom_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6u2hb"]
+_data = {
+"RESET": SubResource("Animation_tksul"),
+"ship_zoom_in": SubResource("Animation_ckdon"),
+"ship_zoom_out": SubResource("Animation_coo62")
+}
+
+[node name="ArtifactEnding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vfedr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 181.0
+color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(159, 91)
+texture = ExtResource("2_i8ilg")
+hframes = 17
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(159, 91)
+texture = ExtResource("3_7h5cb")
+hframes = 18
+
+[node name="AutoFadeNode" parent="." instance=ExtResource("4_r55rc")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_6u2hb")
+}
+
+[node name="FadeOutNode" parent="." instance=ExtResource("5_cx8g7")]
+visible = false
+position = Vector2(22.8489, 0.826763)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_y3ksa")
+pitch_scale = 0.47
+autoplay = true
+
+[connection signal="animation_done" from="AutoFadeNode" to="." method="_on_auto_fade_node_animation_done"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_done" from="FadeOutNode" to="." method="_on_fade_out_node_animation_done"]

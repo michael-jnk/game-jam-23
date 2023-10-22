@@ -23,8 +23,8 @@ extends Node2D
 @onready var map2 = $"World 2/Ship Map"
 
 
-const pastYear = "2020"
-const presentYear = "3000"
+const pastYear = "2982"
+const presentYear = "3089"
 const SILENT_DB = -80
 
 var enemies_killed = 0 
@@ -149,7 +149,7 @@ func _on_fade_out_node_animation_done():
 		ENEMY:
 			get_tree().change_scene_to_file("res://enemy_ending.tscn")
 		ARTIFACT:
-			get_tree().change_scene_to_file("res://artifact_ending.tscn")
+			get_tree().change_scene_to_file("res://artifact_ending_real.tscn")
 		PLAYER_DEATH:
 			get_tree().change_scene_to_file("res://death_scene.tscn")
 
