@@ -19,6 +19,9 @@ extends Node2D
 @onready var musicPlayer2 = $"Music Player2"
 @onready var borderEffect = $CanvasLayer/BorderEffect
 
+@onready var map1 = $"World 1/Ship Map"
+@onready var map2 = $"World 2/Ship Map"
+
 const pastYear = "2020"
 const presentYear = "3000"
 const SILENT_DB = -80
@@ -53,6 +56,8 @@ func _ready():
 	yearLabel.text = presentYear
 	fadeOutNode.visible = false
 	borderEffect.visible = false
+	map1.world(true)
+	map2.world(false)
 
 			
 
