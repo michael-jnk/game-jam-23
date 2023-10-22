@@ -61,6 +61,7 @@ func _ready():
 	animationTree.active = true
 	swordHitbox.knockback_vector = dash_vector
 	get_node("HitboxPivot/SwordHitbox/CollisionShape2D").disabled = true
+	sprite.material.set_shader_parameter("active", false)
 
 func _physics_process(delta):
 	match state: 
