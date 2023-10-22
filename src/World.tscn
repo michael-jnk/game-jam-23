@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=34 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
 [ext_resource type="PackedScene" uid="uid://boaky0itkvhrw" path="res://World/bush.tscn" id="2_1lxpp"]
 [ext_resource type="Texture2D" uid="uid://neteekuio7xm" path="res://Other Asets/title-screen-animation1.png" id="2_ia644"]
 [ext_resource type="PackedScene" uid="uid://bna68cd5ddhfp" path="res://World/health_ui.tscn" id="2_q2csq"]
+[ext_resource type="PackedScene" uid="uid://f52w0lyee8bj" path="res://World/objects.tscn" id="4_hwqce"]
 [ext_resource type="PackedScene" uid="uid://ksdcynvacir3" path="res://World/grass.tscn" id="6_ayrvu"]
 [ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="8_x3qk6"]
 [ext_resource type="PackedScene" uid="uid://oy0w1x0g8qnb" path="res://World/artifact.tscn" id="10_8s6an"]
@@ -106,6 +107,9 @@ position = Vector2(3050, 528)
 [node name="YSortNode" type="Node2D" parent="World 1"]
 y_sort_enabled = true
 
+[node name="Objects" parent="World 1/YSortNode" instance=ExtResource("4_hwqce")]
+position = Vector2(2882, 538)
+
 [node name="Camera2D" type="Camera2D" parent="World 1/YSortNode"]
 position = Vector2(2261, 367)
 enabled = false
@@ -206,10 +210,10 @@ position = Vector2(1194, 722)
 position = Vector2(1308, 1006)
 
 [node name="SpiderAlien14" parent="World 1/YSortNode/DashAliens" instance=ExtResource("16_v5pr6")]
-position = Vector2(1657, 871)
+position = Vector2(1374, 711)
 
 [node name="SpiderAlien15" parent="World 1/YSortNode/DashAliens" instance=ExtResource("16_v5pr6")]
-position = Vector2(1611, 694)
+position = Vector2(1639, 682)
 
 [node name="SpiderAlien16" parent="World 1/YSortNode/DashAliens" instance=ExtResource("16_v5pr6")]
 position = Vector2(1261, 475)
@@ -294,6 +298,9 @@ position = Vector2(1300, 528)
 
 [node name="YSortNode" type="Node2D" parent="World 2"]
 y_sort_enabled = true
+
+[node name="Objects2" parent="World 2/YSortNode" instance=ExtResource("4_hwqce")]
+position = Vector2(1131, 538)
 
 [node name="Camera2D" type="Camera2D" parent="World 2/YSortNode"]
 position = Vector2(511, 367)

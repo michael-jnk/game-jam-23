@@ -1,0 +1,243 @@
+[gd_scene load_steps=2 format=3 uid="uid://f52w0lyee8bj"]
+
+[ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="1_jkfl5"]
+
+[node name="Objects" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Tree" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1419.66, 118.586)
+
+[node name="Tree5" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1400.77, 118.587)
+
+[node name="Tree6" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1381.88, 118.587)
+
+[node name="Tree7" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1362.99, 118.587)
+
+[node name="Tree8" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1344.09, 118.587)
+
+[node name="Tree9" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1325.2, 118.587)
+
+[node name="Tree10" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1306.31, 118.587)
+
+[node name="Tree11" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1287.41, 118.587)
+
+[node name="Tree12" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1268.52, 118.587)
+
+[node name="Tree13" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1249.63, 118.587)
+
+[node name="Tree2" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1438.56, 118.587)
+
+[node name="Tree3" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1476.34, 118.587)
+
+[node name="Tree4" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1457.45, 118.587)
+
+[node name="Tree14" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1418.77, 161.622)
+
+[node name="Tree15" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1399.87, 161.622)
+
+[node name="Tree16" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1380.98, 161.622)
+
+[node name="Tree17" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1362.09, 161.622)
+
+[node name="Tree18" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1343.19, 161.622)
+
+[node name="Tree19" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1324.3, 161.622)
+
+[node name="Tree20" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1305.41, 161.622)
+
+[node name="Tree21" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1286.52, 161.622)
+
+[node name="Tree22" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1267.62, 161.622)
+
+[node name="Tree23" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1248.73, 161.622)
+
+[node name="Tree24" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1437.66, 161.622)
+
+[node name="Tree25" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1475.44, 161.622)
+
+[node name="Tree26" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1456.55, 161.622)
+
+[node name="Tree27" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1418.77, 205.614)
+
+[node name="Tree28" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1399.87, 205.614)
+
+[node name="Tree29" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1380.98, 205.614)
+
+[node name="Tree30" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1362.09, 205.614)
+
+[node name="Tree31" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1343.19, 205.614)
+
+[node name="Tree32" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1324.3, 205.614)
+
+[node name="Tree33" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1305.41, 205.614)
+
+[node name="Tree34" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1286.52, 205.614)
+
+[node name="Tree35" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1267.62, 205.614)
+
+[node name="Tree36" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1248.73, 205.614)
+
+[node name="Tree37" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1437.66, 205.614)
+
+[node name="Tree38" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1475.44, 205.614)
+
+[node name="Tree39" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1456.55, 205.614)
+
+[node name="Tree41" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1350.39, 310.811)
+
+[node name="Tree42" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1331.5, 310.811)
+
+[node name="Tree43" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1312.61, 310.811)
+
+[node name="Tree44" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1293.71, 310.811)
+
+[node name="Tree45" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1274.82, 310.811)
+
+[node name="Tree46" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1255.93, 310.811)
+
+[node name="Tree47" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1237.03, 310.811)
+
+[node name="Tree49" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1369.28, 310.811)
+
+[node name="Tree50" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1388.18, 310.811)
+
+[node name="Tree52" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1407.07, 310.811)
+
+[node name="Tree48" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1352.19, 350.022)
+
+[node name="Tree51" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1333.3, 350.022)
+
+[node name="Tree53" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1314.4, 350.022)
+
+[node name="Tree54" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1295.51, 350.022)
+
+[node name="Tree55" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1276.62, 350.022)
+
+[node name="Tree56" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1257.73, 350.022)
+
+[node name="Tree57" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1238.83, 350.022)
+
+[node name="Tree58" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1371.08, 350.022)
+
+[node name="Tree59" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1389.98, 350.022)
+
+[node name="Tree60" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1408.87, 350.022)
+
+[node name="Tree61" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1351.29, 394.013)
+
+[node name="Tree62" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1332.4, 394.013)
+
+[node name="Tree63" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1313.5, 394.013)
+
+[node name="Tree64" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1294.61, 394.013)
+
+[node name="Tree65" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1275.72, 394.013)
+
+[node name="Tree66" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1256.83, 394.013)
+
+[node name="Tree67" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1237.93, 394.013)
+
+[node name="Tree68" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1370.18, 394.013)
+
+[node name="Tree69" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1389.08, 394.013)
+
+[node name="Tree70" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1407.97, 394.013)
+
+[node name="Tree71" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1351.29, 441.83)
+
+[node name="Tree72" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1332.4, 441.83)
+
+[node name="Tree73" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1313.51, 441.83)
+
+[node name="Tree74" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1294.61, 441.83)
+
+[node name="Tree75" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1275.72, 441.83)
+
+[node name="Tree76" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1256.83, 441.83)
+
+[node name="Tree77" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1237.93, 441.83)
+
+[node name="Tree78" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1370.18, 441.83)
+
+[node name="Tree79" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1389.08, 441.83)
+
+[node name="Tree80" parent="." instance=ExtResource("1_jkfl5")]
+position = Vector2(-1407.97, 441.83)
