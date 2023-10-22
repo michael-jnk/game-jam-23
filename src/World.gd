@@ -150,3 +150,8 @@ func _on_fade_out_node_animation_done():
 			get_tree().change_scene_to_file("res://artifact_ending.tscn")
 		PLAYER_DEATH:
 			get_tree().change_scene_to_file("res://death_scene.tscn")
+
+
+func _on_music_player_finished():
+	musicPlayer1.play()
+	musicPlayer2.play()
