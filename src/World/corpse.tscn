@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg2j0ha524gkk"]
+
+[ext_resource type="Script" path="res://World/corpse.gd" id="1_caxt4"]
+[ext_resource type="Texture2D" uid="uid://ck15jfik6gyfv" path="res://Player/mc-sprite-real.png" id="2_ptyf3"]
+[ext_resource type="PackedScene" uid="uid://dsl471sfnj7d5" path="res://Enemies/enemy_visibility_controller.tscn" id="3_porfy"]
+
+[node name="body" type="StaticBody2D"]
+script = ExtResource("1_caxt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.858824)
+texture_filter = 1
+position = Vector2(0, -4)
+texture = ExtResource("2_ptyf3")
+hframes = 73
+frame = 72
+
+[node name="Enemy Visibility Controller" parent="." instance=ExtResource("3_porfy")]
