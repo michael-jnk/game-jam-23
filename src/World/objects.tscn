@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://f52w0lyee8bj"]
+[gd_scene load_steps=3 format=3 uid="uid://f52w0lyee8bj"]
 
 [ext_resource type="PackedScene" uid="uid://dyutcrdixfukr" path="res://World/tree.tscn" id="1_jkfl5"]
+[ext_resource type="PackedScene" uid="uid://boaky0itkvhrw" path="res://World/bush.tscn" id="3_lddyl"]
 
 [node name="Objects" type="Node2D"]
 y_sort_enabled = true
@@ -241,3 +242,63 @@ position = Vector2(-1389.08, 441.83)
 
 [node name="Tree80" parent="." instance=ExtResource("1_jkfl5")]
 position = Vector2(-1407.97, 441.83)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(2, 0)
+
+[node name="Bush" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2523, -433)
+
+[node name="Bush2" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2557, -720)
+
+[node name="Bush3" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2493, -719)
+
+[node name="Bush4" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2414, -716)
+
+[node name="Bush5" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2379, -716)
+
+[node name="Bush6" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2345, -717)
+
+[node name="Bush7" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2414, -436)
+
+[node name="Bush8" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2379, -435)
+
+[node name="Bush9" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2344, -434)
+
+[node name="Bush10" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2271, -436)
+
+[node name="Bush11" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2237, -435)
+
+[node name="Bush12" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2203, -435)
+
+[node name="Bush13" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2274, -721)
+
+[node name="Bush14" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2238, -721)
+
+[node name="Bush15" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-2203, -719)
+
+[node name="Bush16" parent="Node2D" instance=ExtResource("3_lddyl")]
+position = Vector2(-3004, -210)
+
+[node name="Bush" parent="." instance=ExtResource("3_lddyl")]
+position = Vector2(-2556, -432)
+
+[node name="Bush2" parent="." instance=ExtResource("3_lddyl")]
+position = Vector2(-2486, -433)
+
+[node name="Bush3" parent="." instance=ExtResource("3_lddyl")]
+position = Vector2(-2523, -720)

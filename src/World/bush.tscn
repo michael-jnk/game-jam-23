@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://boaky0itkvhrw"]
 
-[ext_resource type="Texture2D" uid="uid://bb2ksxjlwxe5n" path="res://World/Bush.png" id="1_bs7b5"]
+[ext_resource type="Texture2D" uid="uid://pb7gc2oj0f7w" path="res://World/crysleep-chamber.png" id="1_03h1x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_on7y7"]
 radius = 6.0
@@ -10,8 +10,8 @@ height = 26.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -8)
-texture = ExtResource("1_bs7b5")
+position = Vector2(0, -5)
+texture = ExtResource("1_03h1x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

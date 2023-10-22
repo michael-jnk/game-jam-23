@@ -22,6 +22,7 @@ extends Node2D
 @onready var map1 = $"World 1/Ship Map"
 @onready var map2 = $"World 2/Ship Map"
 
+
 const pastYear = "2020"
 const presentYear = "3000"
 const SILENT_DB = -80
@@ -30,7 +31,7 @@ var enemies_killed = 0
 var artifacts_found = 0
 var transitionCooldownActive = false
 
-@export var enemiesKillsNeeded = 20
+@export var enemiesKillsNeeded = 18
 
 enum {
 	WORLD1,
@@ -111,7 +112,8 @@ func _on_fader_animation_finished(anim_name):
 		
 
 func enemy_died(isWorld1):
-	enemies_killed += 1
+	if !isWorld1:
+		enemies_killed += 1
 	if enemies_killed >= enemiesKillsNeeded:
 		game_end_condition = ENEMY
 		end_game()
