@@ -30,7 +30,7 @@ var enemies_killed = 0
 var artifacts_found = 0
 var transitionCooldownActive = false
 
-@export var enemiesKillsNeeded = 10
+@export var enemiesKillsNeeded = 20
 
 enum {
 	WORLD1,
