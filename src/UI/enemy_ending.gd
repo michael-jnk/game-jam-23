@@ -2,42 +2,32 @@ extends Control
 
 
 
-var current_slide = 0
-var story = ["The lives were lost did not make up for the information yet to be found...", "asdlfjas;dklfjas;dlkfjafds", "Make sure that you are more careful next time."]
 
-
-
-var click = false
-var current_story_rendered = ""
-var current_story_index = 0
-
-@onready var textBox = $TextBox
-
-var shiftUp = false
-
-var isReady = false
 @onready var animationPlayer = $AnimationPlayer
-var slowBool = true
+@onready var sprite2 = $Sprite2D2
+@onready var textBox = $TextBox
+@onready var fade_out_node=  $FadeOutNode
 
-	
+var firstAnimation = false
 
-
-func _on_timer_timeout():
-	shiftUp = !shiftUp
+func _ready():
+	sprite2.visible = false
 	
 
 
 func _on_auto_fade_node_animation_done():
-	isReady = true
-	textBox.render_story(story)
+	animationPlayer.play("ship_zoom_in")
 
-
-func _on_text_box_slide_reached(slideNumber):
-	print(slideNumber)
-	if slideNumber == 1:
-		animationPlayer.play("ship_zoom_in")
 	
 
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "ship_zoom_in":
+		sprite2.visible = true
+		animationPlayer.play("ship_zoom_out")
+	else:
+		fade_out_node.play()
+		
 
-func _on_text_box_story_done():
+
+func _on_fade_out_node_animation_done():
 	get_tree().change_scene_to_file("res://StartScreen.tscn")

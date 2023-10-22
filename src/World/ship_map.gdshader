@@ -3,6 +3,8 @@ shader_type canvas_item;
 uniform bool is_past = true;
 
 void fragment() {
+	COLOR = newShader;
+	return;
 	vec4 previousColor = texture(TEXTURE, UV);
 	vec4 newShader;
 	if (is_past) {
