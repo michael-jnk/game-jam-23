@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://dki01f67ijqwf"]
 
 [ext_resource type="Script" path="res://World/door.gd" id="1_lwxn4"]
-[ext_resource type="Texture2D" uid="uid://jj67qlkol6k6" path="res://World/test-door.png" id="1_tlqlo"]
+[ext_resource type="Texture2D" uid="uid://07fenuvrm7a0" path="res://World/door.png" id="2_pyd6j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh2f0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxh4j"]
 size = Vector2(16, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3swc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr8a2"]
 size = Vector2(16, 32)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d2fyk"]
@@ -240,7 +240,6 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_5bm6h"]
 resource_name = "open"
-length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -248,10 +247,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -260,10 +259,10 @@ tracks/1/path = NodePath("AnimatableBody2D/Left:shape:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(16, 32), Vector2(12, 32), Vector2(8, 32), Vector2(4, 32), Vector2(1, 32)]
+"values": [Vector2(16, 32), Vector2(15, 32), Vector2(14, 32), Vector2(13, 32), Vector2(12, 32), Vector2(11, 32), Vector2(10, 32), Vector2(9, 32), Vector2(8, 32), Vector2(7, 32)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -272,10 +271,10 @@ tracks/2/path = NodePath("AnimatableBody2D/Left:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-8, 0), Vector2(-10, 0), Vector2(-12, 0), Vector2(-14, 0), Vector2(-15.5, 0), Vector2(-16, 0)]
+"values": [Vector2(-8, 0), Vector2(-8.5, 0), Vector2(-9, 0), Vector2(-9.5, 0), Vector2(-10, 0), Vector2(-10.5, 0), Vector2(-11, 0), Vector2(-11.5, 0), Vector2(-12.5, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -284,10 +283,10 @@ tracks/3/path = NodePath("AnimatableBody2D/Right:shape:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(16, 32), Vector2(13, 32), Vector2(9, 32), Vector2(5, 32), Vector2(1, 32)]
+"values": [Vector2(16, 32), Vector2(15, 32), Vector2(14, 32), Vector2(13, 32), Vector2(12, 32), Vector2(11, 32), Vector2(10, 32), Vector2(9, 32), Vector2(8, 32), Vector2(7, 32)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -296,10 +295,10 @@ tracks/4/path = NodePath("AnimatableBody2D/Right:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(8, 0), Vector2(9.5, 0), Vector2(11.5, 0), Vector2(13.5, 0), Vector2(15.5, 0), Vector2(16, 0)]
+"values": [Vector2(8, 0), Vector2(8.5, 0), Vector2(9, 0), Vector2(9.5, 0), Vector2(10, 0), Vector2(10.5, 0), Vector2(11, 0), Vector2(11.5, 0), Vector2(12, 0), Vector2(12.5, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -308,7 +307,7 @@ tracks/5/path = NodePath("AnimatableBody2D/Right:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -320,7 +319,7 @@ tracks/6/path = NodePath("AnimatableBody2D/Left:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -332,10 +331,10 @@ tracks/7/path = NodePath("AnimatableBody2D/LeftOccluder:occluder:polygon")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [PackedVector2Array(-16, -16, -16, 16, 0, 16, 0, -16), PackedVector2Array(-16, -16, -16, 16, -4, 16, -4, -16), PackedVector2Array(-16, -16, -16, 16, -8, 16, -8, -16), PackedVector2Array(-16, -16, -16, 16, -12, 16, -12, -16), PackedVector2Array(-16, -16, -16, 16, -15, 16, -15, -16)]
+"values": [PackedVector2Array(-16, -16, -16, 16, 0, 16, 0, -16), PackedVector2Array(-16, -16, -16, 16, -1, 16, -1, -16), PackedVector2Array(-16, -16, -16, 16, -2, 16, -2, -16), PackedVector2Array(-16, -16, -16, 16, -3, 16, -3, -16), PackedVector2Array(-16, -16, -16, 16, -4, 16, -4, -16), PackedVector2Array(-16, -16, -16, 16, -5, 16, -5, -16), PackedVector2Array(-16, -16, -16, 16, -6, 16, -6, -16), PackedVector2Array(-16, -16, -16, 16, -7, 16, -7, -16), PackedVector2Array(-16, -16, -16, 16, -8, 16, -8, -16), PackedVector2Array(-16, -16, -16, 16, -9, 16, -9, -16)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -344,10 +343,10 @@ tracks/8/path = NodePath("AnimatableBody2D/RightOccluder:occluder:polygon")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [PackedVector2Array(16, -16, 16, 16, 0, 16, 0, -16), PackedVector2Array(16, -16, 16, 16, 3, 16, 3, -16), PackedVector2Array(16, -16, 16, 16, 7, 16, 7, -16), PackedVector2Array(16, -16, 16, 16, 11, 16, 11, -16), PackedVector2Array(16, -16, 16, 16, 15, 16, 15, -16)]
+"values": [PackedVector2Array(16, -16, 16, 16, 0, 16, 0, -16), PackedVector2Array(16, -16, 16, 16, 1, 16, 1, -16), PackedVector2Array(16, -16, 16, 16, 2, 16, 2, -16), PackedVector2Array(16, -16, 16, 16, 3, 16, 3, -16), PackedVector2Array(16, -16, 16, 16, 4, 16, 4, -16), PackedVector2Array(16, -16, 16, 16, 5, 16, 5, -16), PackedVector2Array(16, -16, 16, 16, 6, 16, 6, -16), PackedVector2Array(16, -16, 16, 16, 7, 16, 7, -16), PackedVector2Array(16, -16, 16, 16, 8, 16, 8, -16), PackedVector2Array(16, -16, 16, 16, 9, 16, 9, -16)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -356,7 +355,7 @@ tracks/9/path = NodePath("AnimatableBody2D/RightOccluder:occluder_light_mask")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 0]
@@ -368,7 +367,7 @@ tracks/10/path = NodePath("AnimatableBody2D/LeftOccluder:occluder_light_mask")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 0]
@@ -405,20 +404,19 @@ height = 186.0
 script = ExtResource("1_lwxn4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 1)
-texture = ExtResource("1_tlqlo")
-hframes = 6
+texture = ExtResource("2_pyd6j")
+hframes = 10
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 collision_mask = 0
 
 [node name="Left" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(-8, 0)
-shape = SubResource("RectangleShape2D_wh2f0")
+shape = SubResource("RectangleShape2D_yxh4j")
 
 [node name="Right" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(8, 0)
-shape = SubResource("RectangleShape2D_i3swc")
+shape = SubResource("RectangleShape2D_rr8a2")
 
 [node name="LeftOccluder" type="LightOccluder2D" parent="AnimatableBody2D"]
 occluder = SubResource("OccluderPolygon2D_d2fyk")
@@ -435,7 +433,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendSpace1D_i8jrf")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/blend_position = 0.400341
+parameters/blend_position = 0.88586
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
