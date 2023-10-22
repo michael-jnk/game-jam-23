@@ -26,6 +26,10 @@ const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
 
 @onready var hitbox = $Hitbox
 
+const corpse = preload("res://World/corpse.tscn")
+#var corpseLoc = Vector2.ZERO
+# unnecessary :grimace:
+
 func _physics_process(delta):
 	match state:
 		IDLE:
@@ -68,6 +72,11 @@ func _physics_process(delta):
 		var enemyDeathEffect = EnemyDeathEffect.instantiate()
 		get_parent().add_child(enemyDeathEffect)
 		enemyDeathEffect.global_position = global_position
+		
+		var enemyCorpse = corpse.instantiate()
+		get_parent().add_child(enemyCorpse)
+		enemyCorpse.global_position = global_position
+		
 		queue_free()
 	
 	
@@ -84,6 +93,8 @@ func accellerate_towards(point, delta):
 	sprite.flip_h = velocity.x < 0
 		
 func _on_hurtbox_area_entered(area):
+#	corpseLoc = world.get_node("World "+str((area.get_parent().get_parent().world%2)+1)+"/YSortNode/Player").global_position + (global_position - area.global_position)
+# i did not need to add that :skull:
 	health -= area.damage
 	hurtbox.create_hit_effect()
 	knockback = area.get_knockback()
