@@ -32,6 +32,7 @@ func set_hearts(value):
 	if heartUIFull != null:
 		if hearts >= 1:
 			heartUIFull.size.x = int(hearts) * 15
+			heartUIFull.visible = true
 		else:
 			heartUIFull.visible = false
 		if hearts <= 0:
