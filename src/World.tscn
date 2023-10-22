@@ -104,6 +104,7 @@ script = ExtResource("1_gq7kl")
 
 [node name="Background" type="Sprite2D" parent="World 1"]
 light_mask = 2
+z_index = -10
 texture_repeat = 2
 position = Vector2(159, -177.093)
 rotation = -0.000780472
@@ -296,6 +297,7 @@ position = Vector2(-1000, 2.08165e-12)
 
 [node name="Background" type="Sprite2D" parent="World 2"]
 light_mask = 2
+z_index = -10
 texture_repeat = 2
 position = Vector2(-1583.99, -177.093)
 rotation = -0.000780472

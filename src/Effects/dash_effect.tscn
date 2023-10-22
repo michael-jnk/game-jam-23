@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw2ec5jplph8g"]
+[gd_scene load_steps=5 format=3 uid="uid://cw2ec5jplph8g"]
 
 [ext_resource type="Texture2D" uid="uid://ck15jfik6gyfv" path="res://Player/mc-sprite-real.png" id="1_207m8"]
 [ext_resource type="Script" path="res://Effects/dash_effect.gd" id="1_sajyp"]
+
+[sub_resource type="Gradient" id="Gradient_x2n1o"]
+offsets = PackedFloat32Array(0, 0.674121)
+colors = PackedColorArray(0.592157, 0.913725, 1, 0.341176, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mw288"]
+gradient = SubResource("Gradient_x2n1o")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="dash_effect" type="Sprite2D"]
 modulate = Color(0.592157, 0.913725, 1, 0.580392)
@@ -9,3 +18,7 @@ y_sort_enabled = true
 texture = ExtResource("1_207m8")
 hframes = 73
 script = ExtResource("1_sajyp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = SubResource("GradientTexture2D_mw288")
