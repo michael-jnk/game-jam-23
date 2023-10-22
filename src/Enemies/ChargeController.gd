@@ -27,6 +27,8 @@ func start_preparing(player):
 #	print("start preparing")
 
 func prepare():
+	if target == null:
+		return
 	if (prepTimer.time_left > turnGrace):
 		targetVector = (target.global_position - global_position).normalized()
 

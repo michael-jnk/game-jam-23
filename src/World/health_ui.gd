@@ -16,6 +16,7 @@ func _ready():
 	self.set_hearts(playerController.health)
 	playerController.health_changed.connect(set_hearts)
 	heartUIFull.visible = true
+	heartUIHalf.visible = true
 
 
 
@@ -33,6 +34,9 @@ func set_hearts(value):
 			heartUIFull.size.x = int(hearts) * 15
 		else:
 			heartUIFull.visible = false
+		if hearts <= 0:
+			heartUIHalf.visible = false	
+		
 		if int(hearts) != hearts:	
 			heartUIHalf.size.x = (int(hearts) + 1) * 15
 		else:

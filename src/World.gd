@@ -13,6 +13,7 @@ extends Node2D
 @export var transitionCooldown = 3
 @onready var coolDownController = $CanvasLayer/TransitionCooldown
 @onready var yearLabel = $CanvasLayer/YearLabel
+@onready var fadeOutNode = $CanvasLayer/FadeOutNode
 
 const pastYear = "2020"
 const presentYear = "3000"
@@ -29,6 +30,14 @@ enum {
 }
 
 
+enum {
+	PLAYER_DEATH,
+	ARTIFACT,
+	ENEMY
+}
+
+var game_end_condition = null
+
 var currentWorld = WORLD2
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +46,7 @@ func _ready():
 	playerController.player2.onWorld = currentWorld == WORLD2
 	modulater.visible = currentWorld == WORLD1
 	yearLabel.text = presentYear
+	fadeOutNode.visible = false
 
 			
 
@@ -84,7 +94,20 @@ func _on_fader_animation_finished(anim_name):
 func enemy_died(isWorld1):
 	enemies_killed += 1
 	if enemies_killed >= enemiesKillsNeeded:
-		get_tree().change_scene_to_file("res://enemy_ending.tscn")
+		game_end_condition = ENEMY
+		end_game()
+		
+
+
+func _on_artifact_controller_artifact_condition_met():
+	game_end_condition = ARTIFACT
+	end_game()
+	
+
+
+func _on_player_controller_game_ended():
+	game_end_condition = PLAYER_DEATH
+	end_game()
 	
 
 
@@ -92,5 +115,19 @@ func _on_transition_cooldown_timer_timeout():
 	transitionCooldownActive = false
 
 
-func _on_artifact_controller_artifact_condition_met():
-	get_tree().change_scene_to_file("res://artifact_ending.tscn")
+	
+
+func end_game():
+	fadeOutNode.visible = true
+	fadeOutNode.play()
+	
+
+
+func _on_fade_out_node_animation_done():
+	match game_end_condition:
+		ENEMY:
+			get_tree().change_scene_to_file("res://enemy_ending.tscn")
+		ARTIFACT:
+			get_tree().change_scene_to_file("res://artifact_ending.tscn")
+		PLAYER_DEATH:
+			get_tree().change_scene_to_file("res://death_scene.tscn")

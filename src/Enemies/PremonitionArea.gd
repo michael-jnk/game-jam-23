@@ -22,7 +22,8 @@ func create_premonition(targ):
 
 func remove_premonition():
 	premonitionActive = false
-	premonition.queue_free()
+	if premonition != null:
+		premonition.queue_free()
 	target = null
 
 func _physics_process(delta):

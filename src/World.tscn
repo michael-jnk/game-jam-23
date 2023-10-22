@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=35 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://m160lv3fj4xv" path="res://artifact_ui.tscn" id="17_mksqf"]
 [ext_resource type="Script" path="res://UI/HelpController.gd" id="19_y5dgo"]
 [ext_resource type="FontFile" uid="uid://lsf5abucrjjv" path="res://Other Asets/Spectral-Light.ttf" id="20_24mr3"]
+[ext_resource type="PackedScene" uid="uid://cgdroksyhyohl" path="res://UI/fade_out_node.tscn" id="26_28rpo"]
 
 [sub_resource type="Animation" id="Animation_62nka"]
 length = 0.001
@@ -472,6 +473,8 @@ libraries = {
 }
 script = ExtResource("11_svbhb")
 
+[node name="FadeOutNode" parent="CanvasLayer" instance=ExtResource("26_28rpo")]
+
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("11_ae5qn")
 invincibilityDuration = 1.0
@@ -505,6 +508,8 @@ position = Vector2(-994, 402)
 [connection signal="story_done" from="CanvasLayer/HelpTextBox" to="CanvasLayer/HelpController" method="_on_help_text_box_story_done"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="CanvasLayer/Fader" method="_on_animation_finished"]
+[connection signal="animation_done" from="CanvasLayer/FadeOutNode" to="." method="_on_fade_out_node_animation_done"]
+[connection signal="game_ended" from="PlayerController" to="." method="_on_player_controller_game_ended"]
 [connection signal="timeout" from="TransitionCooldownTimer" to="." method="_on_transition_cooldown_timer_timeout"]
 
 [editable path="World 1/YSortNode/InteractionObjects/Artifact1"]
