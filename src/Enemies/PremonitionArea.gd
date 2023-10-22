@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var world = $/root/World
-const premonitionScene = preload("res://Effects/premonition_particles.tscn")
+var premonitionScene = preload("res://Effects/premonition_particles.tscn")
 var premonitionActive = false
 var premonition = null
 

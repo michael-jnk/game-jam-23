@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://oy0w1x0g8qnb"]
+[gd_scene load_steps=9 format=3 uid="uid://oy0w1x0g8qnb"]
 
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="1_hx7rx"]
 [ext_resource type="Script" path="res://World/artifact.gd" id="1_ohx5i"]
+[ext_resource type="Script" path="res://World/ArtifactPremonitionArea.gd" id="3_yp824"]
+[ext_resource type="PackedScene" uid="uid://dsl471sfnj7d5" path="res://Enemies/enemy_visibility_controller.tscn" id="4_n1fwe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n0jcb"]
 radius = 11.0
@@ -15,6 +17,9 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_ngh4g")
 fill = 1
 fill_from = Vector2(0.483945, 0.518349)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7syj"]
+radius = 16.0312
 
 [node name="Artifact" type="Node2D"]
 script = ExtResource("1_ohx5i")
@@ -37,6 +42,16 @@ shadow_filter = 1
 shadow_filter_smooth = 2.3
 texture = SubResource("GradientTexture2D_6ijrl")
 texture_scale = 1.97
+
+[node name="PremonitionArea" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("3_yp824")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PremonitionArea"]
+shape = SubResource("CircleShape2D_g7syj")
+
+[node name="Enemy Visibility Controller" parent="." instance=ExtResource("4_n1fwe")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 

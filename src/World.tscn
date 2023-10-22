@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dnh5unqr3ld3o" path="res://Artifacts/bracelet-artefact.png" id="11_bmgje"]
 [ext_resource type="Texture2D" uid="uid://t7aahp6vj36j" path="res://Artifacts/book-artefact-REAL.png" id="11_meoxd"]
 [ext_resource type="Script" path="res://UI/Fader.gd" id="11_svbhb"]
-[ext_resource type="PackedScene" path="res://Enemies/big_enemy.tscn" id="12_vwcku"]
+[ext_resource type="PackedScene" uid="uid://bs6gnkxkoko0v" path="res://Enemies/big_enemy.tscn" id="12_vwcku"]
 [ext_resource type="PackedScene" path="res://UI/dash_coldown.tscn" id="12_wxu6c"]
 [ext_resource type="AudioStream" uid="uid://d4ii20unmpcya" path="res://Music and Sounds/Music.mp3" id="13_0g61i"]
 [ext_resource type="Script" path="res://UI/ArtifactController.gd" id="13_8kd3m"]

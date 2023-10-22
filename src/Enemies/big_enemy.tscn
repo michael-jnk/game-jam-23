@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bt4dwlv24p2dy"]
+[gd_scene load_steps=22 format=3 uid="uid://bs6gnkxkoko0v"]
 
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_tcqqn"]
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="2_ne8ww"]
