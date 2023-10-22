@@ -3,7 +3,7 @@ extends CharacterBody2D
 var knockback = Vector2.ZERO
 @export var health = 5
 var state = IDLE
-var MAX_SPEED = 70
+var MAX_SPEED = 50
 
 const ACCELLERATION = 200
 

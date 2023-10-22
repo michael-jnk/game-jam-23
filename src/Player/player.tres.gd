@@ -143,7 +143,7 @@ func dash_state(delta):
 func _on_hurtbox_area_entered(area):
 	var playerHurtSound = PlayerHurtSound.instantiate()
 	get_parent().add_child(playerHurtSound)
-	emit_signal("player_hit", world)
+	emit_signal("player_hit", world, area.damage)
 	velocity = area.get_knockback() * 2
 	
 func start_invincibility(duration):

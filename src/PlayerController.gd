@@ -33,10 +33,10 @@ func _physics_process(delta):
 	elif player2.state != 2 && player1.state == 3:
 		player1.state = 0
 
-func _on_player_player_hit(world):
+func _on_player_player_hit(world, damage):
 	player1.create_hit_effect()
 	player2.create_hit_effect()
-	health -= 1
+	health -= damage
 	emit_signal("health_changed", health)
 	player1.start_invincibility(invincibilityDuration)
 	player2.start_invincibility(invincibilityDuration)

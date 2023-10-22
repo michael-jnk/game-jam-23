@@ -271,6 +271,9 @@ position = Vector2(509, -146)
 [node name="HeartFiller3" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
 position = Vector2(1492, 1039)
 
+[node name="HeartFiller4" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(1188, 777)
+
 [node name="World 2" type="Node2D" parent="."]
 position = Vector2(-1000, 2.08165e-12)
 
@@ -367,6 +370,7 @@ position = Vector2(-1179, 1140)
 
 [node name="BigEnemy16" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-1190, 699)
+health = 7
 
 [node name="BigEnemy17" parent="World 2/YSortNode/BigEnemies" instance=ExtResource("12_vwcku")]
 position = Vector2(-208, 18)
@@ -405,8 +409,9 @@ y_sort_enabled = true
 position = Vector2(0, -10)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+light_mask = 2
 position = Vector2(-34, -48)
-color = Color(0.415686, 0.709804, 0.901961, 1)
+color = Color(0, 0.670588, 0.501961, 0.945098)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
