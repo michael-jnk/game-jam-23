@@ -1355,6 +1355,21 @@ position = Vector2(838.484, -119.543)
 [node name="LightOnSight2" parent="Lights/LightOnSight28" instance=ExtResource("3_2fsvw")]
 position = Vector2(859.176, 107.11)
 
+[node name="LightOnSight29" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-1277.52, 462.87)
+
+[node name="LightOnSight30" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2340.92, 366.279)
+
+[node name="LightOnSight31" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-1827.21, -258.213)
+
+[node name="LightOnSight32" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-2638.71, -226.653)
+
+[node name="LightOnSight33" parent="Lights" instance=ExtResource("3_2fsvw")]
+position = Vector2(-1341.39, -135.801)
+
 [node name="Doors" type="Node2D" parent="."]
 scale = Vector2(0.999217, 1.0014)
 
@@ -1408,15 +1423,3 @@ rotation = 1.5708
 [node name="Door15" parent="Doors" instance=ExtResource("4_nidnr")]
 position = Vector2(-2319.43, -141.5)
 rotation = 1.5708
-
-[node name="LightOnSight" parent="." instance=ExtResource("3_2fsvw")]
-position = Vector2(-1277.52, 462.87)
-
-[node name="LightOnSight2" parent="." instance=ExtResource("3_2fsvw")]
-position = Vector2(-2340.92, 366.279)
-
-[node name="LightOnSight3" parent="." instance=ExtResource("3_2fsvw")]
-position = Vector2(-1827.21, -258.213)
-
-[node name="LightOnSight4" parent="." instance=ExtResource("3_2fsvw")]
-position = Vector2(-2638.71, -226.653)
