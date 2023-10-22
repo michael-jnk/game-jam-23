@@ -105,7 +105,7 @@ func _physics_process(delta):
 		velocity += softCollision.get_push_vector() * delta * 400
 	
 	if health <= 0:
-		world.enemy_died(false)
+		world.enemy_died(true)
 		var enemyDeathEffect = EnemyDeathEffect.instantiate()
 		var spiderDeathEffect = SpiderDeathEffect.instantiate()
 		get_parent().add_child(spiderDeathEffect)
