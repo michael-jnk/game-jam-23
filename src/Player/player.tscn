@@ -1393,7 +1393,6 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 position = Vector2(-2.08165e-12, 0)
 collision_layer = 2
 collision_mask = 8
-damage = 3
 knockback_strength = 120
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
