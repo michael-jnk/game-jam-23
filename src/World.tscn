@@ -121,7 +121,7 @@ position = Vector2(3050, 528)
 y_sort_enabled = true
 
 [node name="Objects" parent="World 1/YSortNode" instance=ExtResource("4_hwqce")]
-position = Vector2(2882, 538)
+position = Vector2(2882, 548)
 
 [node name="Camera2D" type="Camera2D" parent="World 1/YSortNode"]
 position = Vector2(2261, 367)
@@ -313,7 +313,7 @@ position = Vector2(1300, 528)
 y_sort_enabled = true
 
 [node name="Objects2" parent="World 2/YSortNode" instance=ExtResource("4_hwqce")]
-position = Vector2(1131, 538)
+position = Vector2(1131, 548)
 
 [node name="Camera2D" type="Camera2D" parent="World 2/YSortNode"]
 position = Vector2(511, 367)
@@ -528,6 +528,7 @@ position = Vector2(-994, 402)
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="CanvasLayer/Fader" method="_on_animation_finished"]
 [connection signal="animation_done" from="CanvasLayer/FadeOutNode" to="." method="_on_fade_out_node_animation_done"]
 [connection signal="game_ended" from="PlayerController" to="." method="_on_player_controller_game_ended"]
+[connection signal="finished" from="Music Player" to="." method="_on_music_player_finished"]
 [connection signal="timeout" from="TransitionCooldownTimer" to="." method="_on_transition_cooldown_timer_timeout"]
 
 [editable path="World 1/YSortNode/InteractionObjects/Artifact1"]

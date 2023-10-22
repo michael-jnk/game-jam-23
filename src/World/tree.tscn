@@ -11,12 +11,12 @@ collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1.49012e-08, 8)
+position = Vector2(-0.184, -9)
 scale = Vector2(1.051, 1)
 texture = ExtResource("1_athnt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.76837e-07, 17)
+position = Vector2(-0.184, 0)
 rotation = 1.5708
 scale = Vector2(1.08192, 1.00696)
 shape = SubResource("CapsuleShape2D_ogg6d")
