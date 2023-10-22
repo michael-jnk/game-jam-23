@@ -37,6 +37,7 @@ var animationState = null
 
 @onready var swordHitbox = $HitboxPivot/SwordHitbox
 @onready var PlayerHurtSound = preload("res://World/PlayerHurtSound.tscn")
+@onready var blinkAnimation = $BlinkAnimationPlayer
 
 signal health_changed
 signal player_hit
@@ -145,6 +146,7 @@ func _on_hurtbox_area_entered(area):
 	get_parent().add_child(playerHurtSound)
 	emit_signal("player_hit", world, area.damage)
 	velocity = area.get_knockback() * 2
+	blinkAnimation.play("blink")
 	
 func start_invincibility(duration):
 	hurtbox.start_invincibility(duration)
