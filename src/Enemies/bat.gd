@@ -22,6 +22,7 @@ enum {
 @onready var sprite = $animatedBat
 @onready var softCollision = $SoftCollision
 const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
+const BigEnemyDeathEffect = preload("res://Effects/big_enemy_death_effect.tscn")
 @onready var visibilityController = $"Enemy Visibility Controller"
 
 @onready var hitbox = $Hitbox
@@ -70,7 +71,11 @@ func _physics_process(delta):
 	if health <= 0:
 		world.enemy_died(false)
 		var enemyDeathEffect = EnemyDeathEffect.instantiate()
+		var bigDeathEffect = BigEnemyDeathEffect.instantiate()
 		get_parent().add_child(enemyDeathEffect)
+		get_parent().add_child(bigDeathEffect)
+		bigDeathEffect.global_position = global_position
+		bigDeathEffect.flip_h = sprite.flip_h
 		enemyDeathEffect.global_position = global_position
 		
 		var enemyCorpse = corpse.instantiate()

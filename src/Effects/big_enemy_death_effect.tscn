@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://66fpxipadvk0"]
+
+[ext_resource type="Script" path="res://Effects/enemy_death_effect.gd" id="1_jpqg6"]
+[ext_resource type="Texture2D" uid="uid://bqm7t7bo4uho7" path="res://Enemies/largeenemy-death-final-REAL.png" id="2_5byic"]
+[ext_resource type="AudioStream" uid="uid://dri1kyvnddvct" path="res://Music and Sounds/EnemyDie.wav" id="3_hq7t7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhfkw"]
+atlas = ExtResource("2_5byic")
+region = Rect2(0, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n6qk"]
+atlas = ExtResource("2_5byic")
+region = Rect2(24, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1ipp"]
+atlas = ExtResource("2_5byic")
+region = Rect2(48, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw1oy"]
+atlas = ExtResource("2_5byic")
+region = Rect2(72, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxs1u"]
+atlas = ExtResource("2_5byic")
+region = Rect2(96, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoahu"]
+atlas = ExtResource("2_5byic")
+region = Rect2(120, 0, 24, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqumx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhfkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n6qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1ipp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw1oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxs1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoahu")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}]
+
+[node name="big_enemy_death_effect" type="Node2D"]
+z_index = 2
+script = ExtResource("1_jpqg6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iqumx")
+animation = &"death"
+frame = 5
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hq7t7")
+autoplay = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

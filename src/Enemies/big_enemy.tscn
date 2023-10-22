@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_tcqqn"]
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="2_ne8ww"]
-[ext_resource type="Texture2D" uid="uid://bynu8f8m6rfwv" path="res://Enemies/large-enemy-idle-export-export-export.png" id="3_y317s"]
+[ext_resource type="Texture2D" uid="uid://cekcnje7jawj0" path="res://Enemies/largeenemy-idle-final-REALt.png" id="3_1rstu"]
 [ext_resource type="Texture2D" uid="uid://2vl6a4xaitw2" path="res://Shadows/SmallShadow.png" id="4_03e5b"]
 [ext_resource type="PackedScene" uid="uid://cmif8gb6exa4c" path="res://Hitboxes and Hurtboxes/Hitbox.tscn" id="5_6dfvw"]
 [ext_resource type="PackedScene" uid="uid://rgmmijyfgg3l" path="res://Enemies/player_detection_zone.tscn" id="6_bsk87"]
@@ -15,40 +15,40 @@
 radius = 14.0
 height = 28.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_am7ru"]
-atlas = ExtResource("3_y317s")
-region = Rect2(0, 0, 28, 27)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovklv"]
+atlas = ExtResource("3_1rstu")
+region = Rect2(0, 0, 25, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_axqpr"]
-atlas = ExtResource("3_y317s")
-region = Rect2(28, 0, 28, 27)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5lps"]
+atlas = ExtResource("3_1rstu")
+region = Rect2(25, 0, 25, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nva4g"]
-atlas = ExtResource("3_y317s")
-region = Rect2(56, 0, 28, 27)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu82y"]
+atlas = ExtResource("3_1rstu")
+region = Rect2(50, 0, 25, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_punvb"]
-atlas = ExtResource("3_y317s")
-region = Rect2(84, 0, 28, 27)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcww6"]
+atlas = ExtResource("3_1rstu")
+region = Rect2(75, 0, 25, 28)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d4j1t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_15rvi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_am7ru")
+"texture": SubResource("AtlasTexture_ovklv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_axqpr")
+"texture": SubResource("AtlasTexture_w5lps")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nva4g")
+"texture": SubResource("AtlasTexture_fu82y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_punvb")
+"texture": SubResource("AtlasTexture_gcww6")
 }],
 "loop": true,
-"name": &"new_animation",
-"speed": 4.0
+"name": &"default",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vfwk4"]
@@ -81,10 +81,9 @@ position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_fdbqx")
 
 [node name="animatedBat" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_d4j1t")
-animation = &"new_animation"
-autoplay = "new_animation"
-frame_progress = 0.0592415
+sprite_frames = SubResource("SpriteFrames_15rvi")
+autoplay = "default"
+frame_progress = 0.189013
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(1, 7)
