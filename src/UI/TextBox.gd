@@ -6,6 +6,7 @@ extends Control
 @onready var doneMark = $"Done Label"
 @onready var clickPlayer1 = $AudioStreamPlayer1
 @onready var clickPlayer2 = $AudioStreamPlayer2
+@onready var panel = $Panel
 
 var click = false
 var current_story_rendered = ""
@@ -13,6 +14,8 @@ var current_story_index = 0
 var current_slide = 0
 
 var shiftUp = false
+
+var height = 70
 
 var isReady = false
 @onready var animationPlayer = $AnimationPlayer
@@ -23,6 +26,12 @@ signal story_done
 signal slide_reached(slideNumber)
 
 
+func set_height(new_height):
+	label.size.y = new_height - 6
+	panel.size.y = new_height
+	self.position.y -= new_height - height
+	height = new_height
+	
 
 func render_story(renderedStory):
 	label.clear()
