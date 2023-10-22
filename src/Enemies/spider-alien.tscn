@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://6nfrd5kr6sjg"]
+[gd_scene load_steps=46 format=3 uid="uid://ds8u8o368t2uy"]
 
 [ext_resource type="Script" path="res://Enemies/spider-alien.gd" id="1_50bas"]
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="2_njl5h"]

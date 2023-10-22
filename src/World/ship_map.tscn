@@ -509,7 +509,7 @@ polygon = PackedVector2Array(-8.75, -10.25, -8.25, -16, 8.5, -16, 8, -8.5, 16, -
 polygon = PackedVector2Array(-9.75, -9, -9.75, -16, 16, -16, 16, -3.5, 8.5, -2.75, 8.75, 16, -9.5, 16, -10, -2.25, -16, -2.75, -16, -8.75)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7h5rm"]
-texture = ExtResource("1_hm3e8")
+texture = ExtResource("5_lfy0l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0

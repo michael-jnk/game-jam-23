@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://World/light_on_sight.gd" id="1_qa8rg"]
 
-[sub_resource type="Gradient" id="Gradient_yikrx"]
+[sub_resource type="Gradient" id="Gradient_ngh4g"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.13738, 0.738019)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h2vqx"]
-gradient = SubResource("Gradient_yikrx")
+gradient = SubResource("Gradient_ngh4g")
 fill = 1
-fill_from = Vector2(0.483945, 0.518349)
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_56lne"]
 radius = 171.549
