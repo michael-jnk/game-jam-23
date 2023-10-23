@@ -1,19 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bow7rqynyeknq"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d32qb"]
-emission_shape = 1
-emission_sphere_radius = 5.0
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 0.0
-gravity = Vector3(0, -7.8, 0)
-initial_velocity_min = 23.0
-initial_velocity_max = 28.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-linear_accel_min = -57.16
-linear_accel_max = -57.16
-color = Color(1, 1, 0, 0.65098)
+[gd_scene load_steps=3 format=3 uid="uid://bow7rqynyeknq"]
 
 [sub_resource type="Gradient" id="Gradient_ck1tu"]
 offsets = PackedFloat32Array(0.0479233, 0.715655)
@@ -24,13 +9,21 @@ gradient = SubResource("Gradient_ck1tu")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="PremonitionParticles" type="GPUParticles2D"]
-amount = 18
-process_material = SubResource("ParticleProcessMaterial_d32qb")
+[node name="PremonitionParticles" type="CPUParticles2D"]
+amount = 28
 lifetime = 2.0
 speed_scale = 5.0
 randomness = 1.0
-trail_enabled = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, -7.8)
+initial_velocity_min = 23.0
+initial_velocity_max = 28.0
+linear_accel_min = -57.16
+linear_accel_max = -57.16
+color = Color(1, 1, 0, 0.65098)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 1, 0, 1)
