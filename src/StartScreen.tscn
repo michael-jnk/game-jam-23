@@ -130,7 +130,6 @@ stream = ExtResource("6_e6g0g")
 autoplay = true
 
 [node name="AutoFadeNode" parent="." instance=ExtResource("7_wwtrg")]
-visible = false
 position = Vector2(-42, -20)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
