@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://v7m2xcfs13u4"]
+[gd_scene load_steps=81 format=3 uid="uid://v7m2xcfs13u4"]
 
 [ext_resource type="Shader" path="res://World/ship_map.gdshader" id="1_rkbds"]
 [ext_resource type="Script" path="res://World/ship_map.gd" id="1_y772o"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3fpg566btnjg" path="res://World/DirtTileset.png" id="2_yl5wk"]
 [ext_resource type="PackedScene" uid="uid://uyjqvmojkv3o" path="res://World/light_on_sight.tscn" id="3_2fsvw"]
 [ext_resource type="PackedScene" uid="uid://dki01f67ijqwf" path="res://World/door.tscn" id="4_nidnr"]
+[ext_resource type="Texture2D" uid="uid://dmk1vptwk1qmm" path="res://World/Tileset_Present.png" id="5_rrb7d"]
 [ext_resource type="Texture2D" uid="uid://wnqjvey3gblo" path="res://World/Spaceship Tileset with Variations.png" id="5_vtgwg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bb4op"]
@@ -355,12 +356,20 @@ separation = Vector2i(2, 2)
 1:1/0 = 0
 1:1/0/terrain_set = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nom8e"]
+texture = ExtResource("5_rrb7d")
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_4ehdy"]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_j1l3m")
 sources/1 = SubResource("TileSetAtlasSource_w141y")
+sources/2 = SubResource("TileSetAtlasSource_nom8e")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6bl6c"]
 shader = ExtResource("1_rkbds")
