@@ -76,6 +76,7 @@ func _physics_process(delta):
 		get_parent().add_child(bigDeathEffect)
 		bigDeathEffect.global_position = global_position
 		bigDeathEffect.flip_h = sprite.flip_h
+		bigDeathEffect.self_modulate = Color(0.627,0.243,0.129)
 		enemyDeathEffect.global_position = global_position
 		
 		var enemyCorpse = corpse.instantiate()

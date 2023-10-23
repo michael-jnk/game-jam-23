@@ -19,8 +19,7 @@ var dash_vector = Vector2.ZERO
 @export var max_health = 4
 @export var health = 4
 
-
-
+var swordEffect = preload("res://Effects/sword_particles.tscn")
 
 var HitEffect = preload("res://Effects/hit_effect.tscn")
 
@@ -162,3 +161,8 @@ func _on_premonition_detection_zone_area_entered(area):
 
 func _on_premonition_detection_zone_area_exited(area):
 	area.remove_premonition()
+
+func spawn_particles():
+	var sEffect = swordEffect.instantiate()
+	swordHitbox.add_child(sEffect)
+	
