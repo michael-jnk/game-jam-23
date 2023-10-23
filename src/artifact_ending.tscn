@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://de14i5b1ahuxn"]
+[gd_scene load_steps=9 format=3 uid="uid://de14i5b1ahuxn"]
 
 [ext_resource type="Script" path="res://artifact_ending.gd" id="1_xcdwb"]
 [ext_resource type="Texture2D" uid="uid://de8umtfpho437" path="res://UI/ship-zoom-in-draft.png" id="2_v0gff"]
 [ext_resource type="PackedScene" uid="uid://b5bebuyj5oih1" path="res://UI/text_box.tscn" id="3_k3xu1"]
 [ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="4_jbimp"]
+[ext_resource type="AudioStream" uid="uid://cu6n0rggswf23" path="res://Music and Sounds/game_jam.wav" id="5_vn58v"]
 
 [sub_resource type="Animation" id="Animation_tksul"]
 length = 0.001
@@ -58,6 +59,9 @@ hframes = 15
 [node name="TextBox" parent="." instance=ExtResource("3_k3xu1")]
 
 [node name="AutoFadeNode" parent="." instance=ExtResource("4_jbimp")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vn58v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="3_rpuf3"]
 [ext_resource type="StyleBox" uid="uid://duc7hd2h8gt0n" path="res://Other Asets/button_style_box.tres" id="4_p72bf"]
 [ext_resource type="FontFile" uid="uid://lsf5abucrjjv" path="res://Other Asets/Spectral-Light.ttf" id="5_nu8tv"]
-[ext_resource type="AudioStream" uid="uid://d4ii20unmpcya" path="res://Music and Sounds/Music.mp3" id="6_e6g0g"]
+[ext_resource type="AudioStream" uid="uid://cu6n0rggswf23" path="res://Music and Sounds/game_jam.wav" id="6_hwno1"]
 [ext_resource type="Texture2D" uid="uid://dtc8nyvg2lh4k" path="res://Other Asets/twinkle-animation-better.png" id="7_g5npk"]
 [ext_resource type="PackedScene" uid="uid://bp2gcle6wy66i" path="res://UI/auto_fade_node.tscn" id="7_wwtrg"]
 
@@ -126,7 +126,7 @@ text = "Double Space"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_e6g0g")
+stream = ExtResource("6_hwno1")
 autoplay = true
 
 [node name="AutoFadeNode" parent="." instance=ExtResource("7_wwtrg")]

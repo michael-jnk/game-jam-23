@@ -583,6 +583,9 @@ artifactNumber = 3
 [node name="HeartFiller4" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
 position = Vector2(-1190, 385)
 
+[node name="HeartFiller5" parent="World 2/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(-1414, 93)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 light_mask = 2
 position = Vector2(-34, -48)
