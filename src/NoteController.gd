@@ -11,10 +11,12 @@ signal artifact_condition_met
 const artifact_texts = [
 	# note 1
 ["93-D (3 years after the mission began, year 2982, month 4)",
-"Everyone was awoken from cryosleep today. Disoriented, I went to check the navigation console and we are still 6942069 miles from X45t-9.",
+"Everyone was awoken from cryosleep today.",
+"Disoriented, I went to check the navigation console and we are still 6942069 miles from X45t-9.",
 "872-L checked the cryosleep system regulators and nothing appeared to have malfunctioned,",
 "so we are still at a loss as to why this has occurred.",
-"At the current moment, we are trying to see if we can re-enter cryosleep. If we cannot, Aeternitas 1 has failed."],
+"At the current moment, we are trying to see if we can re-enter cryosleep.",
+"If we cannot, Aeternitas 1 has failed."],
 # note 2
  ["93-D (3 years after the mission began, year 2982, month 4)",
 "As 339-T was observing the central console, I went to do a sweep of STAR47 to ensure nothing else was awry.",
