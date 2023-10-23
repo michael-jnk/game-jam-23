@@ -37,7 +37,7 @@ shape = SubResource("CircleShape2D_n0jcb")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 color = Color(1, 0.980392, 0.733333, 1)
-energy = 0.47
+energy = 1.5
 blend_mode = 2
 shadow_enabled = true
 shadow_filter = 1

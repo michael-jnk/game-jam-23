@@ -1419,8 +1419,10 @@ scale = Vector2(2.815, 2.815)
 color = Color(1, 0.956863, 0.854902, 1)
 energy = 0.5
 blend_mode = 2
+range_item_cull_mask = 3
 shadow_filter = 1
 shadow_filter_smooth = 3.2
+shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_mwmuj")
 
 [node name="Location" type="Area2D" parent="."]
