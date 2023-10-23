@@ -31,6 +31,8 @@ var enemies_killed = 0
 var artifacts_found = 0
 var transitionCooldownActive = false
 
+var total_artifacts_collected = 0 
+
 @export var enemiesKillsNeeded = 18
 
 enum {
@@ -119,13 +121,6 @@ func enemy_died(isWorld1):
 
 
 
-
-func _on_artifact_controller_artifact_condition_met():
-	game_end_condition = ARTIFACT
-	end_game()
-	
-
-
 func _on_player_controller_game_ended():
 	game_end_condition = PLAYER_DEATH
 	end_game()
@@ -157,3 +152,20 @@ func _on_fade_out_node_animation_done():
 func _on_music_player_finished():
 	musicPlayer1.play()
 	musicPlayer2.play()
+
+const ARTIFACTS_NEEDED = 9
+
+func _on_artifact_controller_new_artifact_found():
+	artifacts_found += 1
+	print(artifacts_found)
+	if artifacts_found >= ARTIFACTS_NEEDED:
+		game_end_condition = ARTIFACT
+		end_game()
+
+
+func _on_note_controller_new_artifact_found():
+	artifacts_found += 1
+	print(artifacts_found)
+	if artifacts_found >= ARTIFACTS_NEEDED:
+		game_end_condition = ARTIFACT
+		end_game()

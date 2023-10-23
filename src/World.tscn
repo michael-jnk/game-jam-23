@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dawcn0ks7hxuw"]
+[gd_scene load_steps=44 format=3 uid="uid://dawcn0ks7hxuw"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_gq7kl"]
 [ext_resource type="PackedScene" uid="uid://g0ad734tja55" path="res://Player/player.tscn" id="1_nc3is"]
@@ -35,6 +35,8 @@
 [ext_resource type="PackedScene" uid="uid://cgdroksyhyohl" path="res://UI/fade_out_node.tscn" id="26_28rpo"]
 [ext_resource type="PackedScene" uid="uid://c3lli4lbrfixo" path="res://note_ui.tscn" id="27_u6akg"]
 [ext_resource type="AudioStream" uid="uid://cu6n0rggswf23" path="res://Music and Sounds/game_jam.wav" id="29_wmc50"]
+[ext_resource type="Script" path="res://UI/Pauser.gd" id="32_ipusk"]
+[ext_resource type="FontFile" uid="uid://b7tv6tn42mrhw" path="res://Other Asets/rainyhearts.ttf" id="33_dnl2w"]
 
 [sub_resource type="Gradient" id="Gradient_thsb7"]
 interpolation_mode = 2
@@ -653,6 +655,28 @@ script = ExtResource("11_svbhb")
 [node name="FadeOutNode" parent="CanvasLayer" instance=ExtResource("26_28rpo")]
 visible = false
 
+[node name="Pauser" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("32_ipusk")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Pauser"]
+layout_mode = 0
+offset_right = 323.0
+offset_bottom = 188.0
+color = Color(0.196078, 0.196078, 0.196078, 0.87451)
+
+[node name="Label" type="Label" parent="CanvasLayer/Pauser"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 67.0
+offset_right = 189.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("33_dnl2w")
+text = "Paused"
+
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("11_ae5qn")
 invincibilityDuration = 1.0
@@ -685,8 +709,8 @@ one_shot = true
 [connection signal="player_hit" from="World 1/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
 [connection signal="dash_started" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_dash_started"]
 [connection signal="player_hit" from="World 2/YSortNode/Player" to="PlayerController" method="_on_player_player_hit"]
-[connection signal="artifact_condition_met" from="CanvasLayer/ArtifactController" to="." method="_on_artifact_controller_artifact_condition_met"]
-[connection signal="artifact_condition_met" from="CanvasLayer/NoteController" to="." method="_on_artifact_controller_artifact_condition_met"]
+[connection signal="new_artifact_found" from="CanvasLayer/ArtifactController" to="." method="_on_artifact_controller_new_artifact_found"]
+[connection signal="new_artifact_found" from="CanvasLayer/NoteController" to="." method="_on_note_controller_new_artifact_found"]
 [connection signal="story_done" from="CanvasLayer/ArtifactTextBox" to="CanvasLayer/ArtifactController" method="_on_artifact_text_box_story_done"]
 [connection signal="story_done" from="CanvasLayer/HelpTextBox" to="CanvasLayer/HelpController" method="_on_help_text_box_story_done"]
 [connection signal="animation_finished" from="CanvasLayer/Fader" to="." method="_on_fader_animation_finished"]

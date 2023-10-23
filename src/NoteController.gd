@@ -5,7 +5,7 @@ var artifacts_found = 0
 @onready var artifactUI = $"../NoteUI"
 @onready var artifactTextBox = $"../ArtifactTextBox"
 
-signal artifact_condition_met
+signal new_artifact_found
 
 
 const artifact_texts = [
@@ -74,12 +74,14 @@ func artifact_found(artifactNumber):
 	artifactUI.display_artifact(artifactNumber)
 	artifactTextBox.visible = true
 	artifactTextBox.render_story(artifact_texts[artifactNumber])
+	
 	get_tree().paused = true
-	if artifacts_found == 5:
-		artifact_condition_met.emit()
+	
+	
 		
 
 
 func _on_artifact_text_box_story_done():
 	artifactTextBox.visible = false
 	get_tree().paused = false
+	new_artifact_found.emit()
