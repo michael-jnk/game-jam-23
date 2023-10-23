@@ -17,7 +17,7 @@ var story = ["The year is 3089.",
 "It seemed that all hope was lost.",
 "Suddenly, after 107 years, ASAN began receiving distress signals from STAR47.",
 "ASAN knew that this might be their only chance to understand what happened to the crew of Aeternitas 1 and establish a colony on X45t-9",
-"so it sent one of its best astronauts, 63-B, on a mission to board STAR47 and uncover the truth...",
+"so it sent one of its best astronauts, 63-B, armed with a revolutionary new technology on a mission to board STAR47 and uncover the truth...",
 "...before it's too late."
 ]
 

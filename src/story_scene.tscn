@@ -60,7 +60,6 @@ offset_top = -30.0
 offset_bottom = 10.0
 
 [node name="AutoFadeNode" parent="." instance=ExtResource("5_tdeyi")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
