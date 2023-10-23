@@ -72,6 +72,7 @@ func artifact_found(artifactNumber):
 	artifactUI.display_artifact(artifactNumber)
 	artifactTextBox.visible = true
 	artifactTextBox.render_story(artifact_texts[artifactNumber])
+	get_tree().paused = true
 	if artifacts_found == 5:
 		artifact_condition_met.emit()
 		
@@ -79,3 +80,4 @@ func artifact_found(artifactNumber):
 
 func _on_artifact_text_box_story_done():
 	artifactTextBox.visible = false
+	get_tree().paused = false
