@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbo6fc8recb4k"]
+[gd_scene load_steps=8 format=3 uid="uid://6b781ucmge6u"]
 
 [ext_resource type="Script" path="res://World/heart_object.gd" id="1_gq22p"]
 [ext_resource type="Texture2D" uid="uid://dtmojjxix5agv" path="res://UI/HeartUIFull.png" id="2_lms3u"]
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="2_lu1jn"]
+[ext_resource type="PackedScene" uid="uid://dsl471sfnj7d5" path="res://Enemies/enemy_visibility_controller.tscn" id="4_avyb7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n0jcb"]
 radius = 11.0
@@ -39,6 +40,8 @@ shadow_filter = 1
 shadow_filter_smooth = 2.3
 texture = SubResource("GradientTexture2D_6ijrl")
 texture_scale = 1.97
+
+[node name="Enemy Visibility Controller" parent="." instance=ExtResource("4_avyb7")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 

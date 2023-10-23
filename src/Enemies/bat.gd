@@ -30,6 +30,11 @@ const BigEnemyDeathEffect = preload("res://Effects/big_enemy_death_effect.tscn")
 const corpse = preload("res://World/corpse.tscn")
 #var corpseLoc = Vector2.ZERO
 # unnecessary :grimace:
+@onready var darkness = $PointLight2D
+var MAX_ENERGY
+
+func _ready():
+	MAX_ENERGY = darkness.energy
 
 func _physics_process(delta):
 	match state:
@@ -91,6 +96,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	modulate.a = visibilityController.getAlpha()
+	darkness.energy = MAX_ENERGY * visibilityController.getAlpha()
 
 func accellerate_towards(point, delta):
 	var direction = global_position.direction_to(point)
