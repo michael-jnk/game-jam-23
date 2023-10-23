@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bs6gnkxkoko0v"]
+[gd_scene load_steps=24 format=3 uid="uid://bs6gnkxkoko0v"]
 
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_tcqqn"]
 [ext_resource type="PackedScene" uid="uid://ccep5qk61j4fb" path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" id="2_ne8ww"]
@@ -68,6 +68,16 @@ height = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs5lv"]
 radius = 16.0312
 
+[sub_resource type="Gradient" id="Gradient_5up8t"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.7)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jelse"]
+gradient = SubResource("Gradient_5up8t")
+fill = 1
+fill_from = Vector2(0.522936, 0.511468)
+
 [node name="BigEnemy" type="CharacterBody2D"]
 collision_layer = 16
 script = ExtResource("1_tcqqn")
@@ -133,6 +143,11 @@ script = ExtResource("9_0tacg")
 shape = SubResource("CircleShape2D_fs5lv")
 
 [node name="Enemy Visibility Controller" parent="." instance=ExtResource("10_mbyej")]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.2
+blend_mode = 1
+texture = SubResource("GradientTexture2D_jelse")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_area_entered"]
