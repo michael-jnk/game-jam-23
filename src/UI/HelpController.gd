@@ -15,7 +15,8 @@ func _process(delta):
 const help_messages = [["Welcome aboard the STAR47. Press Enter or Space to dismiss this message."], 
 ["Press Shift to dash and Space to attack."],
 ["Attack enemies with your sword to kill them."],
-["Press E to transport yourself to the past and access the enemies with the red glow."]]
+["Press E to transport yourself to the past and access the enemies with the red glow."],
+["Continue collecting artifacts and notes of the crew to discover the truth."]]
 
 
 func _on_help_node_help_required(helpNumber):

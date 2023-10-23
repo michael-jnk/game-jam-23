@@ -260,7 +260,11 @@ position = Vector2(106, 308)
 [node name="InteractionObjects" type="Node2D" parent="World 1/YSortNode"]
 
 [node name="HelpNode4" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
-position = Vector2(1679, 383)
+position = Vector2(1601, 366)
+helpNumber = 4
+
+[node name="Area2D" parent="World 1/YSortNode/InteractionObjects/HelpNode4" index="0"]
+position = Vector2(63, 13)
 
 [node name="HelpNode2" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("10_6212n")]
 position = Vector2(2182, 210)
@@ -364,7 +368,7 @@ position = Vector2(-279, 205)
 position = Vector2(-456, 299)
 
 [node name="body15" parent="World 1/YSortNode/Corpses" instance=ExtResource("15_xcdqr")]
-position = Vector2(1189, 304)
+position = Vector2(1167, 304)
 
 [node name="body16" parent="World 1/YSortNode/Corpses" instance=ExtResource("15_xcdqr")]
 position = Vector2(388, 421)
@@ -635,6 +639,7 @@ one_shot = true
 [connection signal="finished" from="Music Player" to="." method="_on_music_player_finished"]
 [connection signal="timeout" from="TransitionCooldownTimer" to="." method="_on_transition_cooldown_timer_timeout"]
 
+[editable path="World 1/YSortNode/InteractionObjects/HelpNode4"]
 [editable path="World 1/YSortNode/InteractionObjects/Artifact1"]
 [editable path="World 1/YSortNode/InteractionObjects/Artifact1/Hurtbox"]
 [editable path="World 1/YSortNode/InteractionObjects/Artifact0"]
