@@ -584,7 +584,7 @@ position = Vector2(-1190, 385)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 light_mask = 2
 position = Vector2(-34, -48)
-color = Color(0, 0.670588, 0.501961, 0.945098)
+color = Color(0, 0.670588, 0.501961, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
