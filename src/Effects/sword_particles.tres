@@ -1,0 +1,17 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://ccc7l6y2qetck"]
+
+[resource]
+emission_shape = 3
+emission_box_extents = Vector3(5, 10, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 40.22
+initial_velocity_max = 66.2
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -96.17
+linear_accel_max = -96.17
+color = Color(1, 0.356863, 0.290196, 0.596078)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 1.0

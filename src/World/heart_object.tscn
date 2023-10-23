@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbo6fc8recb4k"]
+[gd_scene load_steps=8 format=3 uid="uid://6b781ucmge6u"]
 
 [ext_resource type="Script" path="res://World/heart_object.gd" id="1_gq22p"]
 [ext_resource type="Texture2D" uid="uid://dtmojjxix5agv" path="res://UI/HeartUIFull.png" id="2_lms3u"]
