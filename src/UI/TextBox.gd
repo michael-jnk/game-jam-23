@@ -59,7 +59,7 @@ func _process(delta):
 			clickPlayer2.play()
 		click = not click
 	else:
-		doneMark.text = "⌄"
+		doneMark.text = "v"
 		
 	
 	if Input.is_action_just_pressed("attack") or Input.is_action_just_pressed("ui_accept"):
