@@ -102,7 +102,6 @@ texture = ExtResource("3_7h5cb")
 hframes = 18
 
 [node name="AutoFadeNode" parent="." instance=ExtResource("4_r55rc")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 speed_scale = 0.5
@@ -112,7 +111,7 @@ libraries = {
 
 [node name="FadeOutNode" parent="." instance=ExtResource("5_cx8g7")]
 visible = false
-position = Vector2(22.8489, 0.826763)
+position = Vector2(-5, -3)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_y3ksa")
