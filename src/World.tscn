@@ -320,6 +320,9 @@ artifactNumber = 2
 position = Vector2(1679, 858)
 artifactNumber = 1
 
+[node name="HeartFiller6" parent="World 1/YSortNode/InteractionObjects" instance=ExtResource("16_e5rg0")]
+position = Vector2(2019, 448)
+
 [node name="Corpses" type="Node2D" parent="World 1/YSortNode"]
 y_sort_enabled = true
 position = Vector2(615, 100)
@@ -604,10 +607,12 @@ script = ExtResource("11_ae5qn")
 invincibilityDuration = 1.0
 
 [node name="Music Player" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("29_wmc50")
 autoplay = true
 
 [node name="Music Player2" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("13_0g61i")
 volume_db = -80.0
 autoplay = true
