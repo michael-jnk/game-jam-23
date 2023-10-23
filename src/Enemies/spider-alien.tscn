@@ -237,7 +237,8 @@ modulate = Color(1, 0.407843, 0, 1)
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_256bi")
 autoplay = "default"
-offset = Vector2(6, 0)
+frame_progress = 0.784104
+offset = Vector2(-1, 0)
 
 [node name="ObjectCollisions" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

@@ -1396,7 +1396,7 @@ position = Vector2(-1200, -144)
 rotation = 1.5708
 
 [node name="Door7" parent="Doors" instance=ExtResource("4_nidnr")]
-position = Vector2(-2162.78, -561.373)
+position = Vector2(-2160, -560)
 
 [node name="Door8" parent="Doors" instance=ExtResource("4_nidnr")]
 position = Vector2(-2288, -560)
@@ -1411,7 +1411,7 @@ position = Vector2(-2416, -496)
 position = Vector2(-2288, -496)
 
 [node name="Door12" parent="Doors" instance=ExtResource("4_nidnr")]
-position = Vector2(-2159.9, -493.74)
+position = Vector2(-2160, -496)
 
 [node name="Door13" parent="Doors" instance=ExtResource("4_nidnr")]
 position = Vector2(-2160, -144)
