@@ -28,7 +28,7 @@ const artifact_texts = [
 ["This Skibur Cube belonged to Commander 34-A who was the leader of Aeternitas 1.",
  "Back in their heyday, they were a 5-time speedcubing world champion.",
  "Praised as a courageous and charismatic leader,",
- "Commander 34-A was dearly missed by family and friends and the ASAN community on Earth"],
+ "Commander 34-A was dearly missed by family and friends and the ASAN community on Earth."],
 
 # artifact 4
 ["This key belonged to Flight Engineer 339-T,",

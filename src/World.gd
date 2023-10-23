@@ -75,9 +75,7 @@ func _physics_process(delta):
 		transitionEffect.play()
 		transitionCooldownTimer.start(transitionCooldown)
 		transitionCooldownActive = true
-			
-			
-
+		
 
 func _on_fader_animation_finished(anim_name):
 #	print(anim_name)
@@ -118,6 +116,8 @@ func enemy_died(isWorld1):
 		game_end_condition = ENEMY
 		end_game()
 		
+
+
 
 
 func _on_artifact_controller_artifact_condition_met():
