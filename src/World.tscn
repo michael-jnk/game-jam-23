@@ -533,6 +533,7 @@ position = Vector2(-34, -48)
 color = Color(0, 0.670588, 0.501961, 0.945098)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="HelpController" type="Node" parent="CanvasLayer"]
 script = ExtResource("19_y5dgo")
